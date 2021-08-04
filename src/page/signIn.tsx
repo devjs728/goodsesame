@@ -36,8 +36,8 @@ export default function SignIn() {
           <PinkButton>Me connecter</PinkButton>
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
-          Toujours pas de compte?{" "}
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer">
+          Toujours pas de compte?
+          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
             C’est par ici
           </span>
         </div>

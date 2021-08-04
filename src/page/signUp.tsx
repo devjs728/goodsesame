@@ -11,7 +11,7 @@ import PinkButton from "../component/buttons.tsx/pinkButton";
 export default function SignUp() {
   return (
     <Auth>
-      <AuthTitle>Connexion</AuthTitle>
+      <AuthTitle>Inscription</AuthTitle>
       <div className="mt-8">
         <SocialButtonGroup />
       </div>
@@ -21,24 +21,18 @@ export default function SignUp() {
           <NormalInput label="Email" type="email" autoComplete="email" />
         </div>
         <div className="mt-6">
-          <div className="flex justify-between items-center">
-            <p className="text-base text-gray-900 font-bold">Mot de passe</p>
-            <p className="text-base text-pink-1 font-medium hover:text-pink-2 cursor-pointer">
-              Mot de passe oublié ?
-            </p>
-          </div>
-          <PasswordInput />
+          <PasswordInput label="Mot de passe" />
         </div>
         <div className="mt-6">
-          <CheckButton label="Se souvenir de moi" />
+          <PasswordInput label="Répétez le mot de passe" />
         </div>
         <div className="mt-6">
           <PinkButton>Me connecter</PinkButton>
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
-          Toujours pas de compte?{" "}
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer">
-            C’est par ici
+          Tu as déjà un compte?
+          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
+            Connecte toi ici
           </span>
         </div>
       </div>
