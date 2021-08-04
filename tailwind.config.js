@@ -2,10 +2,33 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: (theme) => ({
+        "yellow-1": "#FFC43D",
+        "gray-150": "#F0EFED",
+        "pink-1": "#F34160",
+        "pink-2": "#FF4160",
+      }),
+      spacing: {
+        34: "8.375rem",
+        104: "32.125rem",
+      },
+      textColor: {
+        "pink-1": "#E53553",
+        "pink-2": "#FF4160",
+      },
+      ringColor: {
+        "pink-1": "#F34160",
+        "pink-2": "#FF4160",
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
