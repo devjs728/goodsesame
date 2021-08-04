@@ -1,12 +1,14 @@
 import React from "react";
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Route, Redirect, useLocation, RouteProps } from "react-router-dom";
 import { checkLogin } from "./checkLogin";
 
-const PrivateRoute = ({
+interface CustomRouteProps extends Omit<RouteProps, "render" | "component"> {
+  component: React.ElementType;
+}
+
+const PrivateRoute: React.FC<CustomRouteProps> = ({
   component: Component,
   ...rest
-}: {
-  component: Function;
 }) => {
   const location = useLocation();
   const isLogin = checkLogin();
@@ -20,7 +22,7 @@ const PrivateRoute = ({
         ) : (
           <Redirect
             to={{
-              pathname: "/introduce",
+              pathname: "/sign-in",
               state: {
                 from: location,
               },
@@ -32,11 +34,9 @@ const PrivateRoute = ({
   );
 };
 
-const AuthRoute = ({
+const AuthRoute: React.FC<CustomRouteProps> = ({
   component: Component,
   ...rest
-}: {
-  component: Function;
 }) => {
   const isLogin = checkLogin();
 
