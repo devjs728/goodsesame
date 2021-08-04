@@ -10,7 +10,7 @@ export default function NormalInput({
 }: {
   label: string;
   type: string;
-  autoComplete: string;
+  autoComplete?: string;
   placeholder?: string;
   value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;

@@ -16,10 +16,14 @@ module.exports = {
       textColor: {
         "pink-1": "#E53553",
         "pink-2": "#FF4160",
+        "gray-1": "#696864",
       },
       ringColor: {
         "pink-1": "#F34160",
         "pink-2": "#FF4160",
+      },
+      maxWidth: {
+        26: "26rem",
       },
     },
   },
