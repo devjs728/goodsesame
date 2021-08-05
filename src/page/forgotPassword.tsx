@@ -1,12 +1,8 @@
 import React from "react";
 import Auth from "../component/auth";
-import SocialButtonGroup from "../component/auth/socialButtonGroup";
 import AuthTitle from "../component/auth/authTitle";
 import AuthDescription from "../component/auth/authDescription";
-import FormSeperator from "../component/auth/formSeperator";
 import NormalInput from "../component/inputs/normalInput";
-import PasswordInput from "../component/inputs/passwordInput";
-import CheckButton from "../component/inputs/checkButton";
 import PinkButton from "../component/buttons.tsx/pinkButton";
 
 export default function ForgotPassword() {
