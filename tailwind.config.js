@@ -6,6 +6,7 @@ module.exports = {
       backgroundColor: (theme) => ({
         "yellow-1": "#FFC43D",
         "gray-150": "#F0EFED",
+        "gray-350": "#D4D2CD",
         "pink-1": "#F34160",
         "pink-2": "#FF4160",
       }),
@@ -18,6 +19,7 @@ module.exports = {
         "pink-2": "#FF4160",
         "pink-3": "#E53553",
         "gray-1": "#696864",
+        "gray-350": "#D4D2CD",
       },
       ringColor: {
         "pink-1": "#F34160",

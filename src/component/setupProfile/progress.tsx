@@ -25,14 +25,14 @@ const Step: React.FC<{
       <svg
         height="16"
         width="16"
-        className={classNames(index > step ? "text-gray-400" : "text-pink-1")}
+        className={classNames(index > step ? "text-gray-350" : "text-pink-1")}
       >
         <circle cx="8" cy="8" r="8" fill="currentColor" />
       </svg>
       {index < totalSteps - 1 && (
         <div
           className={classNames(
-            index > step ? "bg-gray-400" : "bg-pink-1 opacity-50",
+            index > step ? "bg-gray-350" : "bg-pink-1 opacity-50",
             "flex-1 h-0.5 rounded-sm mx-1"
           )}
         />
