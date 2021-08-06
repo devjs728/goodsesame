@@ -14,8 +14,9 @@ module.exports = {
         104: "32.125rem",
       },
       textColor: {
-        "pink-1": "#E53553",
+        "pink-1": "#F34160",
         "pink-2": "#FF4160",
+        "pink-3": "#E53553",
         "gray-1": "#696864",
       },
       ringColor: {

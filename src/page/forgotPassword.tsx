@@ -2,8 +2,8 @@ import React from "react";
 import Auth from "../component/auth";
 import AuthTitle from "../component/auth/authTitle";
 import AuthDescription from "../component/auth/authDescription";
-import NormalInput from "../component/inputs/normalInput";
-import PinkButton from "../component/buttons.tsx/pinkButton";
+import NormalInput from "../component/widgets/inputs/normalInput";
+import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
 
 export default function ForgotPassword() {
   return (
@@ -21,7 +21,7 @@ export default function ForgotPassword() {
         </div>
         <div className="text-base font-medium text-gray-700 text-left mt-3">
           00:53
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
+          <span className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2">
             Renvoyer le code.
           </span>
         </div>

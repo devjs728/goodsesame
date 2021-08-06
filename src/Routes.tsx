@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Redirect, Switch } from "react-router-dom";
 import ConfirmEmail from "./page/confirmEmail";
 import SignIn from "./page/signIn";
 import SignUp from "./page/signUp";
@@ -16,7 +16,8 @@ export default function Routes() {
       <AuthRoute exact path="/confirm-email" component={ConfirmEmail} />
       <AuthRoute exact path="/forgot-password" component={ForgotPassword} />
       <AuthRoute exact path="/change-password" component={ChangePassword} />
-      <AuthRoute path="/setup-profile" component={SetupProfile} />
+      <AuthRoute exact path="/setup-profile/:step" component={SetupProfile} />
+      <Redirect from="/setup-profile" to="/setup-profile/0" />
     </Switch>
   );
 }

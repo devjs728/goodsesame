@@ -9,7 +9,7 @@ export default function CheckButton({ label }: { label: string }) {
           aria-describedby="offers-description"
           name="offers"
           type="checkbox"
-          className="focus:ring-pink-400 h-4 w-4 text-pink-1 border-gray-300 rounded"
+          className="focus:ring-pink-400 h-4 w-4 text-pink-3 border-gray-300 rounded"
         />
       </div>
       <div className="ml-3 text-sm">

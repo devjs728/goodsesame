@@ -22,7 +22,7 @@ export default function Auth({ children }: { children: ReactNode }) {
         </div>
       </div>
       <div className="max-w-26 mx-auto mt-20 md:mt-0 flex-1 flex justify-center items-center">
-        <div className="block p-3">{children}</div>
+        <div className="block p-3 sm:p-0 w-full">{children}</div>
       </div>
     </div>
   );

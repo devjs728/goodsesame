@@ -2,9 +2,9 @@ import React from "react";
 import Auth from "../component/auth";
 import AuthTitle from "../component/auth/authTitle";
 import AuthDescription from "../component/auth/authDescription";
-import NormalInput from "../component/inputs/normalInput";
-import PasswordInput from "../component/inputs/passwordInput";
-import PinkButton from "../component/buttons.tsx/pinkButton";
+import NormalInput from "../component/widgets/inputs/normalInput";
+import PasswordInput from "../component/widgets/inputs/passwordInput";
+import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
 
 export default function ChangePassword() {
   return (

@@ -1,9 +1,9 @@
 import Auth from "../component/auth";
 import AuthTitle from "../component/auth/authTitle";
 import AuthDescription from "../component/auth/authDescription";
-import NormalInput from "../component/inputs/normalInput";
-import PinkButton from "../component/buttons.tsx/pinkButton";
-import GrayButton from "../component/buttons.tsx/grayButton";
+import NormalInput from "../component/widgets/inputs/normalInput";
+import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
+import GrayButton from "../component/widgets/buttons.tsx/grayButton";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 export default function ConfirmEmail() {
@@ -30,7 +30,7 @@ export default function ConfirmEmail() {
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Tu n’as rien reçu?
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
+          <span className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2">
             Renvoyer l’e-mail
           </span>
         </div>

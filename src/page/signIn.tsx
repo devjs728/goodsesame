@@ -3,10 +3,10 @@ import Auth from "../component/auth";
 import SocialButtonGroup from "../component/auth/socialButtonGroup";
 import AuthTitle from "../component/auth/authTitle";
 import FormSeperator from "../component/auth/formSeperator";
-import NormalInput from "../component/inputs/normalInput";
-import PasswordInput from "../component/inputs/passwordInput";
-import CheckButton from "../component/inputs/checkButton";
-import PinkButton from "../component/buttons.tsx/pinkButton";
+import NormalInput from "../component/widgets/inputs/normalInput";
+import PasswordInput from "../component/widgets/inputs/passwordInput";
+import CheckButton from "../component/widgets/inputs/checkButton";
+import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
 
 export default function SignIn() {
   return (
@@ -23,7 +23,7 @@ export default function SignIn() {
         <div className="mt-6">
           <div className="flex justify-between items-center">
             <p className="text-base text-gray-900 font-bold">Mot de passe</p>
-            <p className="text-base text-pink-1 font-medium hover:text-pink-2 cursor-pointer">
+            <p className="text-base text-pink-3 font-medium hover:text-pink-2 cursor-pointer">
               Mot de passe oublié ?
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function SignIn() {
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Toujours pas de compte?
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
+          <span className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2">
             C’est par ici
           </span>
         </div>

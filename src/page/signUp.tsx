@@ -3,10 +3,9 @@ import Auth from "../component/auth";
 import SocialButtonGroup from "../component/auth/socialButtonGroup";
 import AuthTitle from "../component/auth/authTitle";
 import FormSeperator from "../component/auth/formSeperator";
-import NormalInput from "../component/inputs/normalInput";
-import PasswordInput from "../component/inputs/passwordInput";
-import CheckButton from "../component/inputs/checkButton";
-import PinkButton from "../component/buttons.tsx/pinkButton";
+import NormalInput from "../component/widgets/inputs/normalInput";
+import PasswordInput from "../component/widgets/inputs/passwordInput";
+import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
 
 export default function SignUp() {
   return (
@@ -31,7 +30,7 @@ export default function SignUp() {
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Tu as déjà un compte?
-          <span className="text-pink-1 hover:text-pink-2 cursor-pointer ml-2">
+          <span className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2">
             Connecte toi ici
           </span>
         </div>
