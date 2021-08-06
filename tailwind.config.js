@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundColor: (theme) => ({
         "yellow-1": "#FFC43D",
+        "gray-1": "#696864",
+        "gray-2": "#62615e",
         "gray-150": "#F0EFED",
         "gray-350": "#D4D2CD",
         "pink-1": "#F34160",
@@ -25,6 +27,8 @@ module.exports = {
       ringColor: {
         "pink-1": "#F34160",
         "pink-2": "#FF4160",
+        "gray-1": "#696864",
+        "gray-2": "#62615e",
       },
       maxWidth: {
         26: "26rem",

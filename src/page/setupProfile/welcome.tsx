@@ -9,7 +9,7 @@ import CheckButton from "../../component/widgets/inputs/checkButton";
 
 const Welcome: React.FC = () => {
   let history = useHistory();
-  const handleClick = () => {
+  const handleNext = () => {
     history.push("/setup-profile/1");
   };
 
@@ -32,7 +32,7 @@ const Welcome: React.FC = () => {
         <CheckButton label="Pas d’enfant à la maison" />
       </div>
       <div className="mt-6">
-        <PinkButton onClick={handleClick}>Continuer</PinkButton>
+        <PinkButton onClick={handleNext}>Continuer</PinkButton>
       </div>
     </>
   );
