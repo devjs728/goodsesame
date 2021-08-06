@@ -11,6 +11,7 @@ module.exports = {
         "pink-2": "#FF4160",
       }),
       spacing: {
+        13: "3.438rem",
         34: "8.375rem",
         104: "32.125rem",
       },

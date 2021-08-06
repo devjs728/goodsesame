@@ -45,8 +45,6 @@ const Progress: React.FC<{ step: string; countOfStep: number }> = ({
   step,
   countOfStep,
 }) => {
-  console.log(step);
-
   return (
     <div className="flex flex-nowrap items-center justify-left w-full">
       {Array.from(Array(countOfStep), (e, index) => {

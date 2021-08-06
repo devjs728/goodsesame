@@ -2,7 +2,6 @@ import Auth from "../../component/auth";
 import GrayButton from "../../component/widgets/buttons.tsx/grayButton";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import {
-  Link,
   Redirect,
   Route,
   Switch,
@@ -18,14 +17,21 @@ import KitchenMe from "./kitchenMe";
 import YourGoals from "./yourGoals";
 
 export default function SetupProfile() {
-  let { path, url } = useRouteMatch();
-  let history = useHistory();
+  let { path } = useRouteMatch();
   let { step } = useParams<{ step: string }>();
+  let history = useHistory();
   const parentPath = path.replace("/:step", "");
+
+  const handleBack = () => {
+    const numStep = parseInt(step);
+    if (numStep > 0) {
+      history.push(`${parentPath}/${numStep - 1}`);
+    }
+  };
 
   return (
     <Auth>
-      <GrayButton>
+      <GrayButton onClick={handleBack}>
         <ChevronLeftIcon className="w-6 h-6 mr-1" />
         En arrière
       </GrayButton>
