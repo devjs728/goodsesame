@@ -5,28 +5,37 @@ function classNames(...classes: string[]) {
 }
 
 const Step: React.FC<{
-  active?: boolean;
-  hasLine?: boolean;
-  isLastStep?: boolean;
-}> = ({ active, hasLine, isLastStep }) => {
+  index: number;
+  step: number;
+  totalSteps: number;
+}> = ({ index, step, totalSteps }) => {
   return (
     <div
       className={classNames(
-        hasLine
-          ? isLastStep
+        index < totalSteps - 1
+          ? step + 1 === totalSteps
             ? "w-3/4"
-            : active
+            : index === step
             ? "w-3/6"
             : "w-1/6"
           : "w-auto",
         "flex flex-nowrap items-center justify-left transition-all duration-500"
       )}
     >
-      <svg height="16" width="16" className="text-pink-1">
+      <svg
+        height="16"
+        width="16"
+        className={classNames(index > step ? "text-gray-400" : "text-pink-1")}
+      >
         <circle cx="8" cy="8" r="8" fill="currentColor" />
       </svg>
-      {hasLine && (
-        <div className="flex-1 h-0.5 rounded-sm bg-pink-1 mx-1 opacity-50" />
+      {index < totalSteps - 1 && (
+        <div
+          className={classNames(
+            index > step ? "bg-gray-400" : "bg-pink-1 opacity-50",
+            "flex-1 h-0.5 rounded-sm mx-1"
+          )}
+        />
       )}
     </div>
   );
@@ -44,9 +53,9 @@ const Progress: React.FC<{ step: string; countOfStep: number }> = ({
         return (
           <Step
             key={index}
-            active={step === index.toString()}
-            isLastStep={step === (countOfStep - 1).toString()}
-            hasLine={index < countOfStep - 1}
+            index={index}
+            step={parseInt(step)}
+            totalSteps={countOfStep}
           />
         );
       })}

@@ -1,6 +1,7 @@
 import React from "react";
 import AuthDescription from "../../component/auth/authDescription";
 import AuthTitle from "../../component/auth/authTitle";
+import Adults from "../../component/setupProfile/adults";
 
 const Welcome: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const Welcome: React.FC = () => {
           planète.
         </AuthDescription>
       </div>
+      <Adults />
     </>
   );
 };
