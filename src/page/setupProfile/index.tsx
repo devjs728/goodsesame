@@ -1,4 +1,3 @@
-import Auth from "../../component/auth";
 import GrayButton from "../../component/widgets/buttons.tsx/grayButton";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import {
@@ -30,24 +29,44 @@ export default function SetupProfile() {
   };
 
   return (
-    <Auth>
-      <GrayButton onClick={handleBack}>
-        <ChevronLeftIcon className="w-6 h-6 mr-1" />
-        En arrière
-      </GrayButton>
-      <div className="mt-8">
-        <Progress step={step} countOfStep={5} />
+    <div className="block md:flex">
+      <div className="hidden md:flex flex-col bg-yellow-1 w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
+        <div>
+          <img src="/assets/image/logo.png" alt="logo" className="w-28" />
+          <p className="text-4xl font-bold mt-12">
+            Planifier les meilleurs repas, pour ta santé et notre planète.
+          </p>
+        </div>
+        <div className="flex-1 flex items-end">
+          <div>
+            <img
+              src="/assets/image/mascotte.png"
+              alt="mascotte"
+              className="w-80 mx-auto mb-20"
+            />
+            <p>© Tous droits réservés</p>
+          </div>
+        </div>
       </div>
-      <div className="mt-6">
-        <Switch>
-          <Route exact path={`${parentPath}/0`} component={Welcome} />
-          <Route exact path={`${parentPath}/1`} component={Allergies} />
-          <Route exact path={`${parentPath}/2`} component={Preferences} />
-          <Route exact path={`${parentPath}/3`} component={KitchenMe} />
-          <Route exact path={`${parentPath}/4`} component={YourGoals} />
-          <Redirect to={`${parentPath}/0`} />
-        </Switch>
+      <div className="max-w-26 mx-auto flex-1 mt-10 sm:mt-32 px-3 sm:px-0">
+        <GrayButton onClick={handleBack}>
+          <ChevronLeftIcon className="w-6 h-6 mr-1" />
+          En arrière
+        </GrayButton>
+        <div className="mt-8">
+          <Progress step={step} countOfStep={5} />
+        </div>
+        <div className="mt-6">
+          <Switch>
+            <Route exact path={`${parentPath}/0`} component={Welcome} />
+            <Route exact path={`${parentPath}/1`} component={Allergies} />
+            <Route exact path={`${parentPath}/2`} component={Preferences} />
+            <Route exact path={`${parentPath}/3`} component={KitchenMe} />
+            <Route exact path={`${parentPath}/4`} component={YourGoals} />
+            <Redirect to={`${parentPath}/0`} />
+          </Switch>
+        </div>
       </div>
-    </Auth>
+    </div>
   );
 }

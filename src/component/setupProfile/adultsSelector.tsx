@@ -20,7 +20,7 @@ const AdultsSelector: React.FC = () => {
                 numbers > index ? "active" : "deactive"
               }_adult.png`}
               alt="aldutes"
-              className="w-16 h-16 cursor-pointer"
+              className="w-12 h-12 sm:w-16 sm:h-16 cursor-pointer"
               onClick={() => {
                 handleChange(index);
               }}
