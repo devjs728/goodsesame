@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default function CheckButton({ label }: { label: string }) {
+export default function CheckButton({ label }: { label: string | ReactNode }) {
   return (
     <div className="relative flex items-start">
       <div className="flex items-center h-5">

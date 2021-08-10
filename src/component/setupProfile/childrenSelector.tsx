@@ -20,10 +20,11 @@ const ChldrenSelector: React.FC = () => {
                 numbers > index ? "active" : "deactive"
               }_children.png`}
               alt="aldutes"
-              className="w-12 h-12 sm:w-16 sm:h-16 cursor-pointer"
+              className="w-12 h-12 sm:w-16 sm:h-16 cursor-pointer select-none"
               onClick={() => {
                 handleChange(index);
               }}
+              draggable="false"
             />
           );
         })}

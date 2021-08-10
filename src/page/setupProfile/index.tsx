@@ -29,10 +29,15 @@ export default function SetupProfile() {
   };
 
   return (
-    <div className="block md:flex">
-      <div className="hidden md:flex flex-col bg-yellow-1 w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
+    <div className="block md:flex bg-yellow-1">
+      <div className="hidden md:flex flex-col w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
         <div>
-          <img src="/assets/image/logo.png" alt="logo" className="w-28" />
+          <img
+            src="/assets/image/logo.png"
+            alt="logo"
+            className="w-28 select-none"
+            draggable="false"
+          />
           <p className="text-4xl font-bold mt-12">
             Planifier les meilleurs repas, pour ta santé et notre planète.
           </p>
@@ -42,29 +47,32 @@ export default function SetupProfile() {
             <img
               src="/assets/image/mascotte.png"
               alt="mascotte"
-              className="w-80 mx-auto mb-20"
+              className="w-80 mx-auto mb-20 select-none"
+              draggable="false"
             />
             <p>© Tous droits réservés</p>
           </div>
         </div>
       </div>
-      <div className="max-w-26 mx-auto flex-1 mt-10 sm:mt-32 px-3 sm:px-0">
-        <GrayButton onClick={handleBack}>
-          <ChevronLeftIcon className="w-6 h-6 mr-1" />
-          En arrière
-        </GrayButton>
-        <div className="mt-8">
-          <Progress step={step} countOfStep={5} />
-        </div>
-        <div className="mt-6">
-          <Switch>
-            <Route exact path={`${parentPath}/0`} component={Welcome} />
-            <Route exact path={`${parentPath}/1`} component={Allergies} />
-            <Route exact path={`${parentPath}/2`} component={Preferences} />
-            <Route exact path={`${parentPath}/3`} component={KitchenMe} />
-            <Route exact path={`${parentPath}/4`} component={YourGoals} />
-            <Redirect to={`${parentPath}/0`} />
-          </Switch>
+      <div className="w-full bg-white">
+        <div className="max-w-26 mx-auto flex-1 mt-10 sm:mt-32 px-3 sm:px-0">
+          <GrayButton onClick={handleBack}>
+            <ChevronLeftIcon className="w-6 h-6 mr-1" />
+            En arrière
+          </GrayButton>
+          <div className="mt-8">
+            <Progress step={step} countOfStep={5} />
+          </div>
+          <div className="my-6">
+            <Switch>
+              <Route exact path={`${parentPath}/0`} component={Welcome} />
+              <Route exact path={`${parentPath}/1`} component={Allergies} />
+              <Route exact path={`${parentPath}/2`} component={Preferences} />
+              <Route exact path={`${parentPath}/3`} component={KitchenMe} />
+              <Route exact path={`${parentPath}/4`} component={YourGoals} />
+              <Redirect to={`${parentPath}/0`} />
+            </Switch>
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,12 @@ export default function Auth({ children }: { children: ReactNode }) {
     <div className="block md:flex">
       <div className="hidden md:flex flex-col bg-yellow-1 w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
         <div>
-          <img src="/assets/image/logo.png" alt="logo" className="w-28" />
+          <img
+            src="/assets/image/logo.png"
+            alt="logo"
+            className="w-28 select-none"
+            draggable="false"
+          />
           <p className="text-4xl font-bold mt-12">
             Planifier les meilleurs repas, pour ta santé et notre planète.
           </p>
@@ -15,7 +20,8 @@ export default function Auth({ children }: { children: ReactNode }) {
             <img
               src="/assets/image/mascotte.png"
               alt="mascotte"
-              className="w-80 mx-auto mb-20"
+              className="w-80 mx-auto mb-20 select-none"
+              draggable="false"
             />
             <p>© Tous droits réservés</p>
           </div>

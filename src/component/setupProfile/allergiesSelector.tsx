@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { classNames } from "../../utils";
 
 const initItems = [
   { name: "Lait de vache", imgSrc: "milk", active: false },
@@ -10,10 +11,6 @@ const initItems = [
   { name: "Cacahuètes", imgSrc: "peanut", active: false },
   { name: "Morue, Colin", imgSrc: "fish", active: false },
 ];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const AllergiesSelector: React.FC = () => {
   const [items, setItems] = useState(initItems);
@@ -41,7 +38,7 @@ const AllergiesSelector: React.FC = () => {
               active
                 ? "border-red-300"
                 : "border-transparent hover:border-gray-200",
-              "w-16 h-16 mx-auto transition-colors duration-100 rounded-lg border-2 cursor-pointer"
+              "w-16 h-16 mx-auto transition-colors duration-100 rounded-lg border-2 cursor-pointer select-none"
             )}
             onClick={() => {
               handleActive(name);

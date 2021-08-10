@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { classNames } from "../../utils";
 
 const initItems = [
   { name: "Lait de vache", imgSrc: "milk", active: false },
@@ -9,10 +10,6 @@ const initItems = [
   { name: "Sucre ajouté", imgSrc: "sugar", active: false },
   { name: "Prod. animaux", imgSrc: "rabbit", active: false },
 ];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const PreferencesSelector: React.FC = () => {
   const [items, setItems] = useState(initItems);
