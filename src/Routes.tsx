@@ -4,9 +4,10 @@ import ConfirmEmail from "./page/confirmEmail";
 import SignIn from "./page/signIn";
 import SignUp from "./page/signUp";
 import ForgotPassword from "./page/forgotPassword";
-import { AuthRoute } from "./utils/privateRoute";
+import { AuthRoute, PrivateRoute } from "./utils/privateRoute";
 import ChangePassword from "./page/changePassword";
 import SetupProfile from "./page/setupProfile";
+import Main from "./page/main";
 
 export default function Routes() {
   return (
@@ -18,6 +19,7 @@ export default function Routes() {
       <AuthRoute exact path="/change-password" component={ChangePassword} />
       <AuthRoute exact path="/setup-profile/:step" component={SetupProfile} />
       <Redirect from="/setup-profile" to="/setup-profile/0" />
+      <PrivateRoute path="/" component={Main} />
     </Switch>
   );
 }
