@@ -1,8 +1,8 @@
 import { useHistory } from "react-router-dom";
-import AuthDescription from "../../component/auth/authDescription";
-import AuthTitle from "../../component/auth/authTitle";
-import Slider from "../../component/setupProfile/slider";
-import PinkButton from "../../component/widgets/buttons.tsx/pinkButton";
+import AuthDescription from "../../authDescription";
+import AuthTitle from "../../authTitle";
+import Slider from "../../../setupProfile/slider";
+import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 
 const KitchenMe: React.FC = () => {
   let history = useHistory();

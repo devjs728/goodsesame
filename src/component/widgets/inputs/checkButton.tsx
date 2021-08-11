@@ -1,6 +1,10 @@
 import React, { ReactNode } from "react";
 
-export default function CheckButton({ label }: { label: string | ReactNode }) {
+const CheckButton: React.FC<{
+  label: string | ReactNode;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+}> = ({ label, checked, onChange }) => {
   return (
     <div className="relative flex items-start">
       <div className="flex items-center h-5">
@@ -10,6 +14,10 @@ export default function CheckButton({ label }: { label: string | ReactNode }) {
           name="offers"
           type="checkbox"
           className="focus:ring-pink-400 h-4 w-4 text-pink-3 border-gray-300 rounded"
+          checked={checked}
+          onChange={(e) => {
+            if (onChange) onChange(e.target.checked);
+          }}
         />
       </div>
       <div className="ml-3 text-sm">
@@ -22,4 +30,6 @@ export default function CheckButton({ label }: { label: string | ReactNode }) {
       </div>
     </div>
   );
-}
+};
+
+export default CheckButton;

@@ -1,44 +1,69 @@
-import React from "react";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 import Auth from "../component/auth";
-import SocialButtonGroup from "../component/auth/socialButtonGroup";
-import AuthTitle from "../component/auth/authTitle";
-import FormSeperator from "../component/auth/formSeperator";
-import NormalInput from "../component/widgets/inputs/normalInput";
-import PasswordInput from "../component/widgets/inputs/passwordInput";
-import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
-import { Link } from "react-router-dom";
+import EmailPassword from "../component/auth/signup/emailPassword";
+import Allergies from "../component/auth/signup/setupProfile/allerge";
+import KitchenMe from "../component/auth/signup/setupProfile/kitchenMe";
+import Preferences from "../component/auth/signup/setupProfile/preferences";
+import Welcome from "../component/auth/signup/setupProfile/welcome";
+import YourGoals from "../component/auth/signup/setupProfile/yourGoals";
+import Progress from "../component/setupProfile/progress";
+import GrayButton from "../component/widgets/buttons.tsx/grayButton";
 
 export default function SignUp() {
+  const [step, setStep] = useState<number>(1);
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [adults, setAdults] = useState<number>(0);
+  const [child, setChild] = useState<number>(0);
+
+  const handleBack = () => {
+    if (step > -1) {
+      setStep(step - 1);
+    }
+  };
+
   return (
     <Auth>
-      <AuthTitle>Inscription</AuthTitle>
-      <div className="mt-8">
-        <SocialButtonGroup />
-      </div>
-      <FormSeperator>Ou</FormSeperator>
-      <div className="mt-3">
-        <div>
-          <NormalInput label="Email" type="email" autoComplete="email" />
-        </div>
-        <div className="mt-6">
-          <PasswordInput label="Mot de passe" />
-        </div>
-        <div className="mt-6">
-          <PasswordInput label="Répétez le mot de passe" />
-        </div>
-        <div className="mt-6">
-          <PinkButton>Me connecter</PinkButton>
-        </div>
-        <div className="text-base font-medium text-gray-700 text-center mt-8">
-          Tu as déjà un compte?
-          <Link
-            to="/sign-in"
-            className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2"
-          >
-            Connecte toi ici
-          </Link>
-        </div>
-      </div>
+      {step === -1 ? (
+        <EmailPassword
+          initEmail={email}
+          initPassword={password}
+          onChange={(email, password) => {
+            setEmail(email);
+            setPassword(password);
+            setStep(0);
+          }}
+        />
+      ) : (
+        <>
+          <GrayButton onClick={handleBack}>
+            <ChevronLeftIcon className="w-6 h-6 mr-1" />
+            En arrière
+          </GrayButton>
+          <div className="mt-8">
+            <Progress step={step} countOfStep={5} />
+          </div>
+          <div className="my-6">
+            {step === 0 && (
+              <Welcome
+                initAdulst={adults}
+                initChild={child}
+                onChange={(adults, child) => {
+                  setAdults(adults);
+                  setChild(child);
+                  setStep(step + 1);
+                }}
+              />
+            )}
+            {step === 1 && <Allergies />}
+            {step === 2 && <Preferences />}
+            {step === 3 && <KitchenMe />}
+            {step === 4 && <YourGoals />}
+          </div>
+        </>
+      )}
     </Auth>
   );
 }

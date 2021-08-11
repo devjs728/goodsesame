@@ -1,9 +1,16 @@
 import React, { ReactNode } from "react";
+import { classNames } from "../../utils";
+import styles from "./index.module.css";
 
 export default function Auth({ children }: { children: ReactNode }) {
   return (
-    <div className="block md:flex">
-      <div className="hidden md:flex flex-col bg-yellow-1 w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
+    <div
+      className={classNames(
+        "block md:flex bg-yellow-1",
+        styles["auth-container"]
+      )}
+    >
+      <div className="hidden md:flex flex-col w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
         <div>
           <img
             src="/assets/image/logo.png"
@@ -20,15 +27,19 @@ export default function Auth({ children }: { children: ReactNode }) {
             <img
               src="/assets/image/mascotte.png"
               alt="mascotte"
-              className="w-80 mx-auto mb-20 select-none"
+              className="w-80 mx-auto select-none"
               draggable="false"
             />
-            <p>© Tous droits réservés</p>
+            <p className={classNames(styles["copyright"])}>
+              © Tous droits réservés
+            </p>
           </div>
         </div>
       </div>
-      <div className="max-w-26 mx-auto mt-20 md:mt-0 flex-1 flex justify-center items-center">
-        <div className="block p-3 sm:p-0 w-full">{children}</div>
+      <div className="w-full bg-white">
+        <div className="max-w-26 mx-auto flex-1 mt-10 sm:mt-32 px-3 sm:px-0">
+          {children}
+        </div>
       </div>
     </div>
   );

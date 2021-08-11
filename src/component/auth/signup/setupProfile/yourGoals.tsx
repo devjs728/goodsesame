@@ -1,8 +1,8 @@
 import { useHistory } from "react-router-dom";
-import AuthTitle from "../../component/auth/authTitle";
-import Slider from "../../component/setupProfile/slider";
-import PinkButton from "../../component/widgets/buttons.tsx/pinkButton";
-import CheckButton from "../../component/widgets/inputs/checkButton";
+import AuthTitle from "../../authTitle";
+import Slider from "../../../setupProfile/slider";
+import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import CheckButton from "../../../widgets/inputs/checkButton";
 
 const YourGoals: React.FC = () => {
   let history = useHistory();

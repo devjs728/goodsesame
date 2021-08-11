@@ -38,7 +38,7 @@ const Step: React.FC<{
   );
 };
 
-const Progress: React.FC<{ step: string; countOfStep: number }> = ({
+const Progress: React.FC<{ step: number; countOfStep: number }> = ({
   step,
   countOfStep,
 }) => {
@@ -49,7 +49,7 @@ const Progress: React.FC<{ step: string; countOfStep: number }> = ({
           <Step
             key={index}
             index={index}
-            step={parseInt(step)}
+            step={step}
             totalSteps={countOfStep}
           />
         );

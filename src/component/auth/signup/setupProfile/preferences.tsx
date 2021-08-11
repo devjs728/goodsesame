@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import AuthDescription from "../../component/auth/authDescription";
-import AuthTitle from "../../component/auth/authTitle";
-import PreferencesSelector from "../../component/setupProfile/preferencesSelector";
-import DarkGrayButton from "../../component/widgets/buttons.tsx/darkGrayButton";
-import PinkButton from "../../component/widgets/buttons.tsx/pinkButton";
-import SearchInput from "../../component/widgets/inputs/searchInput";
+import AuthDescription from "../../authDescription";
+import AuthTitle from "../../authTitle";
+import PreferencesSelector from "../../../setupProfile/preferencesSelector";
+import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
+import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import SearchInput from "../../../widgets/inputs/searchInput";
 
 const Preferences: React.FC = () => {
   let history = useHistory();

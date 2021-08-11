@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import AuthDescription from "../../component/auth/authDescription";
-import AuthTitle from "../../component/auth/authTitle";
-import AllergiesSelector from "../../component/setupProfile/allergiesSelector";
-import DarkGrayButton from "../../component/widgets/buttons.tsx/darkGrayButton";
-import PinkButton from "../../component/widgets/buttons.tsx/pinkButton";
+import AuthDescription from "../../authDescription";
+import AuthTitle from "../../authTitle";
+import AllergiesSelector from "../../../setupProfile/allergiesSelector";
+import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
+import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 
 const Allergies: React.FC = () => {
   let history = useHistory();
