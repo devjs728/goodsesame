@@ -1,0 +1,38 @@
+export interface UserInfo {
+  access_token: string;
+  firstname: string;
+  lastname: string;
+  username: string;
+  locale: string;
+  description: string;
+  website: string;
+  blog: string;
+  instagram: string;
+  facebook: string;
+  pinterest: string;
+  diet: string;
+  picture: string;
+  banner: string;
+  gender: string;
+  email: string;
+  shopping_preference: string;
+  anonymous_collect: true;
+  allergies: string[];
+  servings: number;
+  time_available: any;
+  cooking_level: any;
+  budget: any;
+  newsletter: any;
+  provider: "";
+  address: any;
+  address_lat: any;
+  address_lon: any;
+  birthdate: any;
+  kitchen_gear: any[];
+  ingredients_disliked: any[];
+  family_members: { [key: string]: any };
+  autologin_token: string;
+  draft_plan: any;
+  current_plan: any;
+  filters: any;
+}

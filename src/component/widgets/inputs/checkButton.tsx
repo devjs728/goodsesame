@@ -13,7 +13,10 @@ export default function CheckButton({ label }: { label: string | ReactNode }) {
         />
       </div>
       <div className="ml-3 text-sm">
-        <label htmlFor="offers" className="font-medium text-gray-600">
+        <label
+          htmlFor="offers"
+          className="font-medium text-gray-600 select-none"
+        >
           {label}
         </label>
       </div>

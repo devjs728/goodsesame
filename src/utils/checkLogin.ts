@@ -1,3 +1,5 @@
-export const checkLogin = () => {
-  return !!localStorage.getItem("access_token");
+import { getToken } from "./auth";
+
+export const checkLogin = (): boolean => {
+  return !!getToken();
 };

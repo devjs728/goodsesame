@@ -5,11 +5,13 @@ export default function PasswordInput({
   placeholder,
   value,
   onChange,
+  error,
 }: {
   label?: string;
   placeholder?: string;
   value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  error?: string;
 }) {
   const [type, setType] = useState("password");
   return (
@@ -39,6 +41,7 @@ export default function PasswordInput({
           />
         </div>
       </div>
+      {error && <p className="mt-1 text-sm text-pink-1">{error}</p>}
     </div>
   );
 }

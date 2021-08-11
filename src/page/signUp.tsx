@@ -6,6 +6,7 @@ import FormSeperator from "../component/auth/formSeperator";
 import NormalInput from "../component/widgets/inputs/normalInput";
 import PasswordInput from "../component/widgets/inputs/passwordInput";
 import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   return (
@@ -30,9 +31,12 @@ export default function SignUp() {
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Tu as déjà un compte?
-          <span className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2">
+          <Link
+            to="/sign-in"
+            className="text-pink-3 hover:text-pink-2 cursor-pointer ml-2"
+          >
             Connecte toi ici
-          </span>
+          </Link>
         </div>
       </div>
     </Auth>

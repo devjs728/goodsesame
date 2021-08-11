@@ -7,6 +7,7 @@ export default function NormalInput({
   placeholder,
   value,
   onChange,
+  error,
 }: {
   label: string;
   type: string;
@@ -14,6 +15,7 @@ export default function NormalInput({
   placeholder?: string;
   value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  error?: string;
 }) {
   return (
     <div>
@@ -26,6 +28,7 @@ export default function NormalInput({
         value={value}
         onChange={onChange}
       />
+      {error && <p className="mt-1 text-sm text-pink-1">{error}</p>}
     </div>
   );
 }

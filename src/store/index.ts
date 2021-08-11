@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
-import user from "./user/reducer";
 import { applyMiddleware, compose, createStore } from "redux";
 import ReduxThunk from "redux-thunk";
+import user from "./user/reducer";
+import main from "./main/reducer";
 
 declare global {
   interface Window {
@@ -11,6 +12,7 @@ declare global {
 
 const reducers = combineReducers({
   user,
+  main,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
