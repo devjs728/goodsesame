@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { validateEmail } from "../../../utils/validate";
-import PinkButton from "../../widgets/buttons.tsx/pinkButton";
+import PinkButton from "../../widgets/buttons/pinkButton";
 import NormalInput from "../../widgets/inputs/normalInput";
 import PasswordInput from "../../widgets/inputs/passwordInput";
-import AuthTitle from "../authTitle";
+import Title2 from "../../widgets/texts/title2";
 import FormSeperator from "../formSeperator";
 import SocialButtonGroup from "../socialButtonGroup";
 
@@ -52,7 +52,7 @@ const EmailPassword: React.FC<{
   };
   return (
     <>
-      <AuthTitle>Inscription</AuthTitle>
+      <Title2>Inscription</Title2>
       <div className="mt-8">
         <SocialButtonGroup />
       </div>

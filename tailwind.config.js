@@ -17,6 +17,7 @@ module.exports = {
         13: "3.438rem",
         34: "8.375rem",
         104: "32.125rem",
+        940: "58.75rem",
       },
       height: {
         1.2: "0.313rem",
@@ -25,7 +26,9 @@ module.exports = {
         "pink-1": "#F34160",
         "pink-2": "#FF4160",
         "pink-3": "#E53553",
+        "pink-4": "#EB5757",
         "gray-1": "#696864",
+        "gray-2": "#2D2922",
         "gray-350": "#D4D2CD",
       },
       ringColor: {
@@ -36,6 +39,9 @@ module.exports = {
       },
       maxWidth: {
         26: "26rem",
+      },
+      fontSize: {
+        "2.5xl": "1.625rem",
       },
     },
   },

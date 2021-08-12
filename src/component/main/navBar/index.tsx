@@ -34,23 +34,19 @@ const NavBar: React.FC = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {navItems.map(({ path, name, navImage: NavImage }) => (
-                    <div
+                    <Link
                       key={path}
-                      className="flex justify-center items-center"
+                      to={path}
+                      className={classNames(
+                        location?.pathname === path
+                          ? "text-pink-1"
+                          : "text-gray-1",
+                        "text-normal font-bold transition-color duration-200 flex justify-center items-center"
+                      )}
                     >
                       <NavImage active={location?.pathname === path} />
-                      <Link
-                        to={path}
-                        className={classNames(
-                          location?.pathname === path
-                            ? "text-pink-1"
-                            : "text-gray-1",
-                          "ml-2 text-normal font-bold transition-color duration-200"
-                        )}
-                      >
-                        {name}
-                      </Link>
-                    </div>
+                      <span className="hidden lg:block ml-2">{name}</span>
+                    </Link>
                   ))}
                 </div>
                 <div className="flex justify-end items-center sm:w-40">

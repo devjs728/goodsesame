@@ -1,19 +1,19 @@
 import React from "react";
 import Auth from "../component/auth";
-import AuthTitle from "../component/auth/authTitle";
-import AuthDescription from "../component/auth/authDescription";
 import NormalInput from "../component/widgets/inputs/normalInput";
-import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
+import PinkButton from "../component/widgets/buttons/pinkButton";
+import Title2 from "../component/widgets/texts/title2";
+import Text1 from "../component/widgets/texts/text1";
 
 export default function ForgotPassword() {
   return (
     <Auth>
-      <AuthTitle>Mot de passe</AuthTitle>
+      <Title2>Mot de passe</Title2>
       <div className="mt-3">
-        <AuthDescription>
+        <Text1>
           Mot de passe oublié ?<br></br>On t’explique par e-mail comment le
           changer.
-        </AuthDescription>
+        </Text1>
       </div>
       <div className="mt-6">
         <div>

@@ -1,20 +1,20 @@
 import React from "react";
 import Auth from "../component/auth";
-import AuthTitle from "../component/auth/authTitle";
-import AuthDescription from "../component/auth/authDescription";
 import NormalInput from "../component/widgets/inputs/normalInput";
 import PasswordInput from "../component/widgets/inputs/passwordInput";
-import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
+import PinkButton from "../component/widgets/buttons/pinkButton";
+import Title2 from "../component/widgets/texts/title2";
+import Text1 from "../component/widgets/texts/text1";
 
 export default function ChangePassword() {
   return (
     <Auth>
-      <AuthTitle>Changer de mot de passe</AuthTitle>
+      <Title2>Changer de mot de passe</Title2>
       <div className="mt-3">
-        <AuthDescription>
+        <Text1>
           Mot de passe oublié ?<br></br>On t’explique par e-mail comment le
           changer.
-        </AuthDescription>
+        </Text1>
       </div>
       <div className="mt-6">
         <div>

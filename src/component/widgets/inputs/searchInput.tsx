@@ -1,21 +1,16 @@
 import { SearchIcon } from "@heroicons/react/outline";
 import React from "react";
 
-export default function SearchInput({
-  label,
-  placeholder,
-  value,
-  type,
-  onChange,
-}: {
+const SearchInput: React.FC<{
   label?: string;
   placeholder?: string;
   value?: string;
   type?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-}) {
+  className?: string;
+}> = ({ label, placeholder, value, type, onChange, className }) => {
   return (
-    <div>
+    <div className={className}>
       {label && <p className="text-base text-gray-900 font-bold">{label}</p>}
       <div className="mt-2.5 relative flex items-center">
         <input
@@ -32,4 +27,6 @@ export default function SearchInput({
       </div>
     </div>
   );
-}
+};
+
+export default SearchInput;

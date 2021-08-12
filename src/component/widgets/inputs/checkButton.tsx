@@ -1,17 +1,20 @@
 import React, { ReactNode } from "react";
+import { classNames } from "../../../utils";
 
 const CheckButton: React.FC<{
+  id?: string;
   label: string | ReactNode;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
-}> = ({ label, checked, onChange }) => {
+  className?: string;
+}> = ({ id, label, checked, onChange, className }) => {
   return (
-    <div className="relative flex items-start">
+    <div className={classNames("relative flex items-start", className ?? "")}>
       <div className="flex items-center h-5">
         <input
-          id="offers"
+          id={id}
           aria-describedby="offers-description"
-          name="offers"
+          name={id}
           type="checkbox"
           className="focus:ring-pink-400 h-4 w-4 text-pink-3 border-gray-300 rounded"
           checked={checked}
@@ -22,8 +25,8 @@ const CheckButton: React.FC<{
       </div>
       <div className="ml-3 text-sm">
         <label
-          htmlFor="offers"
-          className="font-medium text-gray-600 select-none"
+          htmlFor={id}
+          className="text-sm text-gray-1 font-medium not-italic select-none"
         >
           {label}
         </label>

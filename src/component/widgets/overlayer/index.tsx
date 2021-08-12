@@ -16,11 +16,11 @@ const Overlayer: React.FC = () => {
           <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop
               offset="0%"
-              style={{ stopColor: "#078226", stopOpacity: 1 }}
+              style={{ stopColor: "#FFC43D", stopOpacity: 1 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: "#3eb15b", stopOpacity: 3 }}
+              style={{ stopColor: "#FFC48D", stopOpacity: 3 }}
             />
           </linearGradient>
         </defs>

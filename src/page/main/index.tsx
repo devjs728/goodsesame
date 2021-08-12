@@ -25,12 +25,14 @@ const Main: React.FC = () => {
   return (
     <div>
       <NavBar />
-      <Switch>
-        {navItems.map(({ path, component }) => (
-          <Route key={path} exact path={path} component={component} />
-        ))}
-        <Redirect from="/" to="/mes-menus" />
-      </Switch>
+      <div className="my-8 mx-auto w-11/12 lg:w-940">
+        <Switch>
+          {navItems.map(({ path, component }) => (
+            <Route key={path} exact path={path} component={component} />
+          ))}
+          <Redirect from="/" to="/mes-menus" />
+        </Switch>
+      </div>
     </div>
   );
 };

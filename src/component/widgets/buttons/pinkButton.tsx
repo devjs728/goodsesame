@@ -1,15 +1,20 @@
 import React from "react";
 import { ReactNode } from "react";
+import { classNames } from "../../../utils";
 
 const PinkButton: React.FC<{
   children: ReactNode | string;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   isLoading?: boolean;
-}> = ({ children, onClick, isLoading }) => {
+  className?: string;
+}> = ({ children, onClick, isLoading, className }) => {
   return (
     <button
       type="button"
-      className="w-full inline-flex justify-center items-center px-2.5 py-3 border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-1 hover:bg-pink-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-2"
+      className={classNames(
+        "w-full inline-flex justify-center items-center border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-1 hover:bg-pink-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-2",
+        className ?? "px-2.5 py-3"
+      )}
       onClick={onClick}
       disabled={isLoading}
     >

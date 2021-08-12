@@ -1,10 +1,10 @@
 import { useState } from "react";
-import AuthDescription from "../../authDescription";
-import AuthTitle from "../../authTitle";
 import PreferencesSelector from "../../../setupProfile/preferencesSelector";
-import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
-import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import DarkGrayButton from "../../../widgets/buttons/darkGrayButton";
+import PinkButton from "../../../widgets/buttons/pinkButton";
 import SearchInput from "../../../widgets/inputs/searchInput";
+import Text1 from "../../../widgets/texts/text1";
+import Title2 from "../../../widgets/texts/title2";
 
 const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const [isFirst, setFirst] = useState<boolean>(true);
@@ -15,9 +15,9 @@ const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   if (isFirst) {
     return (
       <>
-        <AuthTitle>Préférences alimentaires</AuthTitle>
+        <Title2>Préférences alimentaires</Title2>
         <div className="mt-2">
-          <AuthDescription>Des aliments à bannir ?</AuthDescription>
+          <Text1>Des aliments à bannir ?</Text1>
         </div>
         <div className="block sm:grid grid-flow-col grid-cols-2 gap-3 mt-8">
           <div>
@@ -38,9 +38,9 @@ const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   } else {
     return (
       <>
-        <AuthTitle>Préférences</AuthTitle>
+        <Title2>Préférences</Title2>
         <div className="mt-2">
-          <AuthDescription>Tu ne souhaites pas manger :</AuthDescription>
+          <Text1>Tu ne souhaites pas manger :</Text1>
         </div>
         <div className="mt-5">
           <PreferencesSelector />

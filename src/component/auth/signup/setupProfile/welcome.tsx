@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import AuthDescription from "../../authDescription";
-import AuthTitle from "../../authTitle";
 import AdultsSelector from "../../../setupProfile/adultsSelector";
 import ChildrenSelector from "../../../setupProfile/childrenSelector";
-import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import PinkButton from "../../../widgets/buttons/pinkButton";
 import CheckButton from "../../../widgets/inputs/checkButton";
+import Text1 from "../../../widgets/texts/text1";
+import Title2 from "../../../widgets/texts/title2";
 
 const Welcome: React.FC<{
   initAdulst: number;
@@ -19,12 +19,12 @@ const Welcome: React.FC<{
 
   return (
     <>
-      <AuthTitle>Bienvenue, goodista!</AuthTitle>
+      <Title2>Bienvenue, goodista!</Title2>
       <div className="mt-2">
-        <AuthDescription>
+        <Text1>
           Ta mission: planifier les meilleurs repas, pour ta santé et notre
           planète.
-        </AuthDescription>
+        </Text1>
       </div>
       <div className="mt-6">
         <AdultsSelector

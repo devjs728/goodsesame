@@ -8,7 +8,7 @@ import Preferences from "../component/auth/signup/setupProfile/preferences";
 import Welcome from "../component/auth/signup/setupProfile/welcome";
 import YourGoals from "../component/auth/signup/setupProfile/yourGoals";
 import Progress from "../component/setupProfile/progress";
-import GrayButton from "../component/widgets/buttons.tsx/grayButton";
+import GrayButton from "../component/widgets/buttons/grayButton";
 
 export default function SignUp() {
   const [step, setStep] = useState<number>(1);

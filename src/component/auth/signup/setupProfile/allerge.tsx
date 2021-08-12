@@ -1,9 +1,9 @@
 import { useState } from "react";
-import AuthDescription from "../../authDescription";
-import AuthTitle from "../../authTitle";
 import AllergiesSelector from "../../../setupProfile/allergiesSelector";
-import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
-import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import DarkGrayButton from "../../../widgets/buttons/darkGrayButton";
+import PinkButton from "../../../widgets/buttons/pinkButton";
+import Text1 from "../../../widgets/texts/text1";
+import Title2 from "../../../widgets/texts/title2";
 
 const Allergies: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const [isFirst, setFirst] = useState<boolean>(true);
@@ -14,9 +14,9 @@ const Allergies: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   if (isFirst) {
     return (
       <>
-        <AuthTitle>Allergies alimentaires</AuthTitle>
+        <Title2>Allergies alimentaires</Title2>
         <div className="mt-2">
-          <AuthDescription>Des allergies à signaler ?</AuthDescription>
+          <Text1>Des allergies à signaler ?</Text1>
         </div>
         <div className="block sm:grid grid-flow-col grid-cols-2 gap-3 mt-8">
           <div>
@@ -37,11 +37,9 @@ const Allergies: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   } else {
     return (
       <>
-        <AuthTitle>Allergies</AuthTitle>
+        <Title2>Allergies</Title2>
         <div className="mt-2">
-          <AuthDescription>
-            Précise les allergies de tous les membres de ton foyer
-          </AuthDescription>
+          <Text1>Précise les allergies de tous les membres de ton foyer</Text1>
         </div>
         <div className="mt-5">
           <AllergiesSelector />

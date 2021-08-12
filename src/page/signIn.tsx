@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import Auth from "../component/auth";
 import SocialButtonGroup from "../component/auth/socialButtonGroup";
-import AuthTitle from "../component/auth/authTitle";
 import FormSeperator from "../component/auth/formSeperator";
 import NormalInput from "../component/widgets/inputs/normalInput";
 import PasswordInput from "../component/widgets/inputs/passwordInput";
 import CheckButton from "../component/widgets/inputs/checkButton";
-import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
+import PinkButton from "../component/widgets/buttons/pinkButton";
 import { signIn } from "../api/user";
 import { validateEmail } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { setToastify, ToastStatus } from "../store/main/action";
 import { Link, useHistory } from "react-router-dom";
 import { setToken } from "../utils/auth";
+import Title2 from "../component/widgets/texts/title2";
 
 const SignIn: React.FC = () => {
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ const SignIn: React.FC = () => {
 
   return (
     <Auth>
-      <AuthTitle>Connexion</AuthTitle>
+      <Title2>Connexion</Title2>
       <div className="mt-8">
         <SocialButtonGroup />
       </div>

@@ -1,10 +1,10 @@
 import Auth from "../component/auth";
-import AuthTitle from "../component/auth/authTitle";
-import AuthDescription from "../component/auth/authDescription";
 import NormalInput from "../component/widgets/inputs/normalInput";
-import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
-import GrayButton from "../component/widgets/buttons.tsx/grayButton";
+import PinkButton from "../component/widgets/buttons/pinkButton";
+import GrayButton from "../component/widgets/buttons/grayButton";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
+import Title2 from "../component/widgets/texts/title2";
+import Text1 from "../component/widgets/texts/text1";
 
 export default function ConfirmEmail() {
   return (
@@ -14,12 +14,12 @@ export default function ConfirmEmail() {
         En arrière
       </GrayButton>
       <div className="mt-8">
-        <AuthTitle>Confirmation du courrier</AuthTitle>
+        <Title2>Confirmation du courrier</Title2>
       </div>
       <div className="mt-3">
-        <AuthDescription>
+        <Text1>
           Nous t’avons envoyé par e-mail un code secret à usage unique
-        </AuthDescription>
+        </Text1>
       </div>
       <div className="mt-8">
         <div>

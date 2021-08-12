@@ -1,7 +1,7 @@
-import AuthDescription from "../../authDescription";
-import AuthTitle from "../../authTitle";
 import Slider from "../../../setupProfile/slider";
-import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import PinkButton from "../../../widgets/buttons/pinkButton";
+import Text1 from "../../../widgets/texts/text1";
+import Title2 from "../../../widgets/texts/title2";
 
 const KitchenMe: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const handleNext = () => {
@@ -10,9 +10,9 @@ const KitchenMe: React.FC<{ onChange: () => void }> = ({ onChange }) => {
 
   return (
     <>
-      <AuthTitle>La cuisine & moi</AuthTitle>
+      <Title2>La cuisine & moi</Title2>
       <div className="mt-2">
-        <AuthDescription>As-tu le temps de cuisiner?</AuthDescription>
+        <Text1>As-tu le temps de cuisiner?</Text1>
       </div>
       <div className="mt-8">
         <Slider

@@ -1,7 +1,7 @@
-import AuthTitle from "../../authTitle";
 import Slider from "../../../setupProfile/slider";
-import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
+import PinkButton from "../../../widgets/buttons/pinkButton";
 import CheckButton from "../../../widgets/inputs/checkButton";
+import Title2 from "../../../widgets/texts/title2";
 
 const YourGoals: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const handleNext = () => {
@@ -10,7 +10,7 @@ const YourGoals: React.FC<{ onChange: () => void }> = ({ onChange }) => {
 
   return (
     <>
-      <AuthTitle>Tes objectifs?</AuthTitle>
+      <Title2>Tes objectifs?</Title2>
       <div className="mt-8">
         <Slider
           label="Me régaler"
