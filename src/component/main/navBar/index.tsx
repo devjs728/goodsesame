@@ -71,6 +71,7 @@ const NavBar: React.FC = () => {
             <div className="pt-2 pb-4 space-y-1">
               {navItems.map(({ path, name }) => (
                 <Link
+                  key={path}
                   to={path}
                   className={classNames(
                     location?.pathname === path

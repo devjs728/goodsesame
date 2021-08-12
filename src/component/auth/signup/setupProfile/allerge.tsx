@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import AuthDescription from "../../authDescription";
 import AuthTitle from "../../authTitle";
 import AllergiesSelector from "../../../setupProfile/allergiesSelector";
 import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
 import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 
-const Allergies: React.FC = () => {
-  let history = useHistory();
-
+const Allergies: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const [isFirst, setFirst] = useState<boolean>(true);
   const handleNext = () => {
-    history.push("/setup-profile/2");
+    onChange();
   };
 
   if (isFirst) {

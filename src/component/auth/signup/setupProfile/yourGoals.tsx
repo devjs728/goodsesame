@@ -1,13 +1,11 @@
-import { useHistory } from "react-router-dom";
 import AuthTitle from "../../authTitle";
 import Slider from "../../../setupProfile/slider";
 import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 import CheckButton from "../../../widgets/inputs/checkButton";
 
-const YourGoals: React.FC = () => {
-  let history = useHistory();
+const YourGoals: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const handleNext = () => {
-    history.push("/setup-profile/4");
+    onChange();
   };
 
   return (

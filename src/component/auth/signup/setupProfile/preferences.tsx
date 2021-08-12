@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import AuthDescription from "../../authDescription";
 import AuthTitle from "../../authTitle";
 import PreferencesSelector from "../../../setupProfile/preferencesSelector";
@@ -7,12 +6,10 @@ import DarkGrayButton from "../../../widgets/buttons.tsx/darkGrayButton";
 import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 import SearchInput from "../../../widgets/inputs/searchInput";
 
-const Preferences: React.FC = () => {
-  let history = useHistory();
-
+const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const [isFirst, setFirst] = useState<boolean>(true);
   const handleNext = () => {
-    history.push("/setup-profile/3");
+    onChange();
   };
 
   if (isFirst) {

@@ -7,14 +7,16 @@ import NormalInput from "../component/widgets/inputs/normalInput";
 import PasswordInput from "../component/widgets/inputs/passwordInput";
 import CheckButton from "../component/widgets/inputs/checkButton";
 import PinkButton from "../component/widgets/buttons.tsx/pinkButton";
-import { signIn } from "../api/auth";
+import { signIn } from "../api/user";
 import { validateEmail } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { setToastify, ToastStatus } from "../store/main/action";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { setToken } from "../utils/auth";
 
 const SignIn: React.FC = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [email, setEmail] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -44,7 +46,8 @@ const SignIn: React.FC = () => {
     setLoading(true);
     signIn(email, password)
       .then((data) => {
-        console.log(data);
+        setToken(data.access_token);
+        history.push("/");
       })
       .catch((err) => {
         console.error(err);

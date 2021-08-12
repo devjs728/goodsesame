@@ -1,13 +1,11 @@
-import { useHistory } from "react-router-dom";
 import AuthDescription from "../../authDescription";
 import AuthTitle from "../../authTitle";
 import Slider from "../../../setupProfile/slider";
 import PinkButton from "../../../widgets/buttons.tsx/pinkButton";
 
-const KitchenMe: React.FC = () => {
-  let history = useHistory();
+const KitchenMe: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const handleNext = () => {
-    history.push("/setup-profile/4");
+    onChange();
   };
 
   return (

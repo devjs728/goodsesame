@@ -57,10 +57,28 @@ export default function SignUp() {
                 }}
               />
             )}
-            {step === 1 && <Allergies />}
-            {step === 2 && <Preferences />}
-            {step === 3 && <KitchenMe />}
-            {step === 4 && <YourGoals />}
+            {step === 1 && (
+              <Allergies
+                onChange={() => {
+                  setStep(step + 1);
+                }}
+              />
+            )}
+            {step === 2 && (
+              <Preferences
+                onChange={() => {
+                  setStep(step + 1);
+                }}
+              />
+            )}
+            {step === 3 && (
+              <KitchenMe
+                onChange={() => {
+                  setStep(step + 1);
+                }}
+              />
+            )}
+            {step === 4 && <YourGoals onChange={() => {}} />}
           </div>
         </>
       )}

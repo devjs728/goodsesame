@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { classNames } from "../../utils";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 export default function Auth({ children }: { children: ReactNode }) {
   return (
