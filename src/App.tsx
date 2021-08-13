@@ -1,26 +1,92 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+  ExclamationIcon,
+} from "@heroicons/react/solid";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import Routes from "./Routes";
+import { toast, ToastContainer } from "react-toastify";
+import { ToastInfo, ToastStatus } from "./store/main/action";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+const App: React.FC<{ toastify: ToastInfo }> = ({ toastify }) => {
+  useEffect(() => {
+    switch (toastify && toastify.status) {
+      case ToastStatus.success:
+        toast.success(
+          <div className="flex">
+            <CheckCircleIcon className="h-6 w-6 text-white mr-3" />
+            {toastify.message}
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+        break;
+      case ToastStatus.warning:
+        toast.warn(
+          <div className="flex">
+            <ExclamationIcon className="h-6 w-6 text-white mr-3" />
+            {toastify.message}
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+        break;
+      case ToastStatus.failed:
+        toast.error(
+          <div className="flex">
+            <ExclamationCircleIcon className="h-6 w-6 text-white mr-3" />
+            {toastify.message}
+          </div>,
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
+    }
+  }, [toastify]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes />
+      <ToastContainer
+        position="top-right"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </>
   );
-}
+};
 
-export default App;
+const mapStateToPros = (state: any) => {
+  return {
+    toastify: state.main.toastify,
+  };
+};
+
+export default connect(mapStateToPros)(App);
