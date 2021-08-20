@@ -54,7 +54,7 @@ const Slider: React.FC<{
   const [level, setLevel] = useState(0);
 
   return (
-    <>
+    <div>
       {label && <p className="text-gray-800 font-bold text-lg">{label}</p>}
       <div className="mt-16 sm:mt-14 grid grid-flow-col grid-cols-3 gap-2 relative place-items-center">
         {levels.map((name, index) => (
@@ -70,7 +70,7 @@ const Slider: React.FC<{
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

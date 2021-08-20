@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { validateEmail } from "../../../utils/validate";
-import PinkButton from "../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../widgets/buttons/pinkButton2";
 import NormalInput from "../../widgets/inputs/normalInput";
 import PasswordInput from "../../widgets/inputs/passwordInput";
 import Title2 from "../../widgets/texts/title2";
@@ -91,7 +91,9 @@ const EmailPassword: React.FC<{
           />
         </div>
         <div className="mt-6">
-          <PinkButton onClick={handleSubmit}>Me connecter</PinkButton>
+          <PinkButton2 className="w-full" onClick={handleSubmit}>
+            Me connecter
+          </PinkButton2>
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Tu as déjà un compte?

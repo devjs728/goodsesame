@@ -5,7 +5,7 @@ import FormSeperator from "../component/auth/formSeperator";
 import NormalInput from "../component/widgets/inputs/normalInput";
 import PasswordInput from "../component/widgets/inputs/passwordInput";
 import CheckButton from "../component/widgets/inputs/checkButton";
-import PinkButton from "../component/widgets/buttons/pinkButton";
+import PinkButton2 from "../component/widgets/buttons/pinkButton2";
 import { signIn } from "../api/user";
 import { validateEmail } from "../utils/validate";
 import { useDispatch } from "react-redux";
@@ -105,9 +105,13 @@ const SignIn: React.FC = () => {
           <CheckButton label="Se souvenir de moi" />
         </div>
         <div className="mt-6">
-          <PinkButton onClick={handleSubmit} isLoading={isLoading}>
+          <PinkButton2
+            className="w-full"
+            onClick={handleSubmit}
+            isLoading={isLoading}
+          >
             Me connecter
-          </PinkButton>
+          </PinkButton2>
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Toujours pas de compte?

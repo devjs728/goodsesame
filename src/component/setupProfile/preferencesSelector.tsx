@@ -27,9 +27,9 @@ const PreferencesSelector: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-flow-col grid-cols-3 grid-rows-3 sm:grid-cols-4 sm:grid-rows-2 gap-x-2 gap-y-6 place-items-center">
+    <div className="flex flex-wrap">
       {items.map(({ name, imgSrc, active }) => (
-        <div key={name} className="text-center max-w-max">
+        <div key={name} className="text-center max-w-max mr-5 mt-5">
           <img
             src={`/assets/image/${imgSrc}.png`}
             alt="allergy"

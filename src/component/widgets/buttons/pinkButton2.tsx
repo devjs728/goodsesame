@@ -2,7 +2,7 @@ import React from "react";
 import { ReactNode } from "react";
 import { classNames } from "../../../utils";
 
-const PinkButton: React.FC<{
+const PinkButton2: React.FC<{
   children: ReactNode | string;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   isLoading?: boolean;
@@ -12,8 +12,8 @@ const PinkButton: React.FC<{
     <button
       type="button"
       className={classNames(
-        "w-full inline-flex justify-center items-center border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-1 hover:bg-pink-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-2",
-        className ?? "px-2.5 py-3"
+        "inline-flex justify-center items-center border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-1 hover:bg-pink-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-2 px-4 py-2.5",
+        className ?? ""
       )}
       onClick={onClick}
       disabled={isLoading}
@@ -49,4 +49,4 @@ const PinkButton: React.FC<{
   );
 };
 
-export default PinkButton;
+export default PinkButton2;

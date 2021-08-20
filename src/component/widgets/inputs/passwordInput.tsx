@@ -33,7 +33,7 @@ export default function PasswordInput({
           }}
         >
           <img
-            src={`./assets/image/eye_${
+            src={`/assets/image/eye_${
               type === "password" ? "show" : "hide"
             }.png`}
             alt="eye"

@@ -1,10 +1,14 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { classNames } from "../../../utils";
 import navItems from "./navItems";
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<{ firstName: string; lastName: string }> = ({
+  firstName,
+  lastName,
+}) => {
   let location = useLocation();
 
   return (
@@ -40,8 +44,8 @@ const NavBar: React.FC = () => {
                       className={classNames(
                         location?.pathname === path
                           ? "text-pink-1"
-                          : "text-gray-1",
-                        "text-normal font-bold transition-color duration-200 flex justify-center items-center"
+                          : "text-gray-1 hover:border-gray-400",
+                        "text-normal font-bold transition-color duration-200 flex justify-center items-center border-b border-transparent"
                       )}
                     >
                       <NavImage active={location?.pathname === path} />
@@ -49,16 +53,23 @@ const NavBar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div className="flex justify-end items-center sm:w-40">
+                <Link
+                  to="/profile"
+                  className="flex justify-end items-center sm:w-40 cursor-pointer text-gray-2  hover:text-gray-1"
+                >
                   <img
                     src="/assets/image/default_avatar.png"
                     alt="avatar"
                     className="w-7 h-7"
                   />
-                  <p className="ml-3 text-base text-gray-800 font-bold">
-                    Linda C.
-                  </p>
-                </div>
+                  {
+                    <p className="ml-3 text-base font-bold">
+                      {`${firstName} ${
+                        lastName.length > 0 ? lastName[0] + "." : ""
+                      }`}
+                    </p>
+                  }
+                </Link>
               </div>
             </div>
           </div>
@@ -87,4 +98,11 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+const mapStateToProps = (state: any) => {
+  return {
+    firstName: state?.user?.info?.firstname ?? "",
+    lastName: state?.user?.info?.lastname ?? "",
+  };
+};
+
+export default connect(mapStateToProps)(NavBar);

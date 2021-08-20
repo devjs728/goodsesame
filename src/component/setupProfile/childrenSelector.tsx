@@ -1,4 +1,4 @@
-const ChldrenSelector: React.FC<{
+const ChildrenSelector: React.FC<{
   maxValue: number;
   value: number;
   onChange: (value: number) => void;
@@ -34,4 +34,4 @@ const ChldrenSelector: React.FC<{
   );
 };
 
-export default ChldrenSelector;
+export default ChildrenSelector;

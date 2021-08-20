@@ -5,6 +5,8 @@ import NavBar from "../../component/main/navBar";
 import navItems from "../../component/main/navBar/navItems";
 import Overlayer from "../../component/widgets/overlayer";
 import { getUserProfile } from "../../store/user/action";
+import Profile from "./profile";
+import Settings from "./settings";
 
 const Main: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,6 +32,8 @@ const Main: React.FC = () => {
           {navItems.map(({ path, component }) => (
             <Route key={path} exact path={path} component={component} />
           ))}
+          <Route exact path="/profile" component={Profile} />
+          <Route path="/settings" component={Settings} />
           <Redirect from="/" to="/mes-menus" />
         </Switch>
       </div>

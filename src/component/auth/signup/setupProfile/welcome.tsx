@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdultsSelector from "../../../setupProfile/adultsSelector";
 import ChildrenSelector from "../../../setupProfile/childrenSelector";
-import PinkButton from "../../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../../widgets/buttons/pinkButton2";
 import CheckButton from "../../../widgets/inputs/checkButton";
 import Text1 from "../../../widgets/texts/text1";
 import Title2 from "../../../widgets/texts/title2";
@@ -55,7 +55,9 @@ const Welcome: React.FC<{
         />
       </div>
       <div className="mt-6">
-        <PinkButton onClick={handleNext}>Continuer</PinkButton>
+        <PinkButton2 className="w-full" onClick={handleNext}>
+          Continuer
+        </PinkButton2>
       </div>
     </>
   );

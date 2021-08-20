@@ -1,6 +1,6 @@
 import Auth from "../component/auth";
 import NormalInput from "../component/widgets/inputs/normalInput";
-import PinkButton from "../component/widgets/buttons/pinkButton";
+import PinkButton2 from "../component/widgets/buttons/pinkButton2";
 import GrayButton from "../component/widgets/buttons/grayButton";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import Title2 from "../component/widgets/texts/title2";
@@ -26,7 +26,7 @@ export default function ConfirmEmail() {
           <NormalInput label="Code" type="text" />
         </div>
         <div className="mt-6">
-          <PinkButton>Confirmer mon e-mail</PinkButton>
+          <PinkButton2>Confirmer mon e-mail</PinkButton2>
         </div>
         <div className="text-base font-medium text-gray-700 text-center mt-8">
           Tu n’as rien reçu?

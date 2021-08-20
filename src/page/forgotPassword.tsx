@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../component/auth";
 import NormalInput from "../component/widgets/inputs/normalInput";
-import PinkButton from "../component/widgets/buttons/pinkButton";
+import PinkButton2 from "../component/widgets/buttons/pinkButton2";
 import Title2 from "../component/widgets/texts/title2";
 import Text1 from "../component/widgets/texts/text1";
 
@@ -26,7 +26,7 @@ export default function ForgotPassword() {
           </span>
         </div>
         <div className="mt-6">
-          <PinkButton>Envoyer</PinkButton>
+          <PinkButton2>Envoyer</PinkButton2>
         </div>
       </div>
     </Auth>

@@ -1,5 +1,5 @@
 import Slider from "../../../setupProfile/slider";
-import PinkButton from "../../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../../widgets/buttons/pinkButton2";
 import Text1 from "../../../widgets/texts/text1";
 import Title2 from "../../../widgets/texts/title2";
 
@@ -44,7 +44,9 @@ const KitchenMe: React.FC<{ onChange: () => void }> = ({ onChange }) => {
         />
       </div>
       <div className="mt-7">
-        <PinkButton onClick={handleNext}>Continuer</PinkButton>
+        <PinkButton2 className="w-full" onClick={handleNext}>
+          Continuer
+        </PinkButton2>
       </div>
     </>
   );

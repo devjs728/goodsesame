@@ -2,7 +2,7 @@ import { TrashIcon } from "@heroicons/react/solid";
 import { useCallback, useEffect, useState } from "react";
 import { getIngredient, Ingredient } from "../../../api/ingredient";
 import { cancelRequest } from "../../../utils/request";
-import PinkButton from "../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../widgets/buttons/pinkButton2";
 import CheckButton from "../../widgets/inputs/checkButton";
 import SearchInput from "../../widgets/inputs/searchInput";
 import SelectNumber from "../../widgets/selectNumber";
@@ -126,9 +126,9 @@ const PlanMyMeals: React.FC = () => {
             </div>
           ))}
         </div>
-        <PinkButton className="w-max px-5 py-2.5 my-3" onClick={handleSubmit}>
+        <PinkButton2 className="w-max px-5 py-2.5 my-3" onClick={handleSubmit}>
           Dépasser
-        </PinkButton>
+        </PinkButton2>
       </div>
     </>
   );

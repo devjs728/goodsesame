@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PreferencesSelector from "../../../setupProfile/preferencesSelector";
 import DarkGrayButton from "../../../widgets/buttons/darkGrayButton";
-import PinkButton from "../../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../../widgets/buttons/pinkButton2";
 import SearchInput from "../../../widgets/inputs/searchInput";
 import Text1 from "../../../widgets/texts/text1";
 import Title2 from "../../../widgets/texts/title2";
@@ -21,13 +21,14 @@ const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
         </div>
         <div className="block sm:grid grid-flow-col grid-cols-2 gap-3 mt-8">
           <div>
-            <PinkButton
+            <PinkButton2
+              className="w-full"
               onClick={() => {
                 setFirst(false);
               }}
             >
               Oui
-            </PinkButton>
+            </PinkButton2>
           </div>
           <div className="mt-2 sm:mt-0">
             <DarkGrayButton onClick={handleNext}>Non</DarkGrayButton>
@@ -52,7 +53,7 @@ const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
           <SearchInput />
         </div>
         <div className="mt-7">
-          <PinkButton onClick={handleNext}>Continuer</PinkButton>
+          <PinkButton2 onClick={handleNext}>Continuer</PinkButton2>
         </div>
       </>
     );

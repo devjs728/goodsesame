@@ -1,5 +1,5 @@
 import Slider from "../../../setupProfile/slider";
-import PinkButton from "../../../widgets/buttons/pinkButton";
+import PinkButton2 from "../../../widgets/buttons/pinkButton2";
 import CheckButton from "../../../widgets/inputs/checkButton";
 import Title2 from "../../../widgets/texts/title2";
 
@@ -50,7 +50,9 @@ const YourGoals: React.FC<{ onChange: () => void }> = ({ onChange }) => {
         />
       </div>
       <div className="mt-7">
-        <PinkButton onClick={handleNext}>Continuer</PinkButton>
+        <PinkButton2 className="w-full" onClick={handleNext}>
+          Continuer
+        </PinkButton2>
       </div>
     </>
   );

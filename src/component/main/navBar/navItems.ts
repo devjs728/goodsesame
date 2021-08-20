@@ -1,9 +1,9 @@
-import JeCuisine from "../../../page/main/jeCuisine";
+import Panier from "../../../page/main/panier";
 import MesMenus from "../../../page/main/meshMenus";
-import MesRecettes from "../../../page/main/mesRecettes";
-import JeCuisineSVG from "./svgs/jeCuisineSVG";
+import IdeesRecettes from "../../../page/main/ideesRecettes";
+import PanierSVG from "./svgs/panierSVG";
 import MesMenusSVG from "./svgs/mesMenusSVG";
-import mesRecettesSVG from "./svgs/mesRecettesSVG";
+import IdeesRecettesSVG from "./svgs/ideesRecettesSVG";
 
 const navItems = [
   {
@@ -13,16 +13,16 @@ const navItems = [
     navImage: MesMenusSVG,
   },
   {
-    path: "/mes-recettes",
-    name: "Mes recettes",
-    component: MesRecettes,
-    navImage: mesRecettesSVG,
+    path: "/idees-recettes",
+    name: "Idées recettes",
+    component: IdeesRecettes,
+    navImage: IdeesRecettesSVG,
   },
   {
-    path: "/je-cuisine",
-    name: "Je cuisine",
-    component: JeCuisine,
-    navImage: JeCuisineSVG,
+    path: "/panier",
+    name: "Panier",
+    component: Panier,
+    navImage: PanierSVG,
   },
 ];
 
