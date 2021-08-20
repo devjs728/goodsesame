@@ -28,7 +28,7 @@ const AllergiesSelector: React.FC = () => {
   };
 
   return (
-    <div className="text-center max-w-max m-3">
+    <div className="flex flex-wrap">
       {items.map(({ name, imgSrc, active }) => (
         <div key={name} className="text-center max-w-max mr-5 mt-5">
           <img
