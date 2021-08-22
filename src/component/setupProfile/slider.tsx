@@ -1,29 +1,5 @@
-import React, { MouseEventHandler, ReactElement, useState } from "react";
-import { classNames } from "../../utils";
-
-const Bar: React.FC<{
-  className?: string;
-  imageName: string;
-  index: number;
-  level: number;
-  name: string;
-  onClick: MouseEventHandler<HTMLDivElement>;
-}> = ({ className, imageName, index, level, name, onClick }) => {
-  return (
-    <div
-      className="w-full relative flex items-center justify-center cursor-pointer py-5"
-      onClick={onClick}
-    >
-      <div
-        className={classNames(
-          index <= level ? "bg-purple-1" : "bg-gray-200",
-          `w-full h-1.2 rounded-md transition-all ${className ?? ""}`
-        )}
-      />
-      {index === level && <Tooltip name={name} imageName={imageName} />}
-    </div>
-  );
-};
+import React, { MouseEventHandler, ReactElement, useState } from 'react';
+import classNames from '../../utils';
 
 const Tooltip: React.FC<{ imageName: string; name: string }> = ({
   imageName,
@@ -46,6 +22,33 @@ const Tooltip: React.FC<{ imageName: string; name: string }> = ({
   );
 };
 
+const Bar: React.FC<{
+  className?: string;
+  imageName: string;
+  index: number;
+  level: number;
+  name: string;
+  onClick: MouseEventHandler<HTMLDivElement>;
+}> = ({ className, imageName, index, level, name, onClick }) => {
+  return (
+    <div
+      className="w-full relative flex items-center justify-center cursor-pointer py-5"
+      role="button"
+      tabIndex={index}
+      onClick={onClick}
+      onKeyUp={() => {}}
+    >
+      <div
+        className={classNames(
+          index <= level ? 'bg-purple-1' : 'bg-gray-200',
+          `w-full h-1.2 rounded-md transition-all ${className ?? ''}`,
+        )}
+      />
+      {index === level && <Tooltip name={name} imageName={imageName} />}
+    </div>
+  );
+};
+
 const Slider: React.FC<{
   label?: string | ReactElement;
   imageName: string;
@@ -60,7 +63,7 @@ const Slider: React.FC<{
         {levels.map((name, index) => (
           <Bar
             imageName={imageName}
-            key={index}
+            key={String(index)}
             index={index}
             level={level}
             name={name}

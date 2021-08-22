@@ -1,13 +1,13 @@
-import { MinusIcon, PlusIcon } from "@heroicons/react/solid";
-import { useState } from "react";
-import { classNames } from "../../utils";
+import React, { useState } from 'react';
+import { MinusIcon, PlusIcon } from '@heroicons/react/solid';
+import classNames from '../../utils';
 
 const SelectNumber: React.FC<{
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
 }> = ({ className, value, onChange }) => {
-  const [val, setVal] = useState<number>(value ? parseInt(value) : 1);
+  const [val, setVal] = useState<number>(value ? parseInt(value, 10) : 1);
 
   const increase = () => {
     if (val > 1) {
@@ -30,8 +30,8 @@ const SelectNumber: React.FC<{
   return (
     <div
       className={classNames(
-        "flex justify-center items-center px-3 py-2 w-max border border-gray-300 rounded-md",
-        className ? className : ""
+        'flex justify-center items-center px-3 py-2 w-max border border-gray-300 rounded-md',
+        className ?? '',
       )}
     >
       <MinusIcon

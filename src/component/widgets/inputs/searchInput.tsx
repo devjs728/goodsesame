@@ -1,5 +1,5 @@
-import { SearchIcon } from "@heroicons/react/outline";
-import React from "react";
+import React from 'react';
+import { SearchIcon } from '@heroicons/react/outline';
 
 const SearchInput: React.FC<{
   label?: string;

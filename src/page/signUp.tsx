@@ -1,22 +1,22 @@
-import { ChevronLeftIcon } from "@heroicons/react/solid";
-import { useState } from "react";
-import Auth from "../component/auth";
-import EmailPassword from "../component/auth/signup/emailPassword";
-import Allergies from "../component/auth/signup/setupProfile/allerge";
-import KitchenMe from "../component/auth/signup/setupProfile/kitchenMe";
-import Preferences from "../component/auth/signup/setupProfile/preferences";
-import Welcome from "../component/auth/signup/setupProfile/welcome";
-import YourGoals from "../component/auth/signup/setupProfile/yourGoals";
-import Progress from "../component/setupProfile/progress";
-import GrayButton from "../component/widgets/buttons/grayButton";
+import React, { useState } from 'react';
+import { ChevronLeftIcon } from '@heroicons/react/solid';
+import Auth from '../component/auth';
+import EmailPassword from '../component/auth/signup/emailPassword';
+import Allergies from '../component/auth/signup/setupProfile/allerge';
+import KitchenMe from '../component/auth/signup/setupProfile/kitchenMe';
+import Preferences from '../component/auth/signup/setupProfile/preferences';
+import Welcome from '../component/auth/signup/setupProfile/welcome';
+import YourGoals from '../component/auth/signup/setupProfile/yourGoals';
+import Progress from '../component/setupProfile/progress';
+import GrayButton from '../component/widgets/buttons/grayButton';
 
 export default function SignUp() {
   const [step, setStep] = useState<number>(1);
 
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [adults, setAdults] = useState<number>(0);
-  const [child, setChild] = useState<number>(0);
+  const [emailAddress, setEmail] = useState<string>('');
+  const [pw, setPassword] = useState<string>('');
+  const [adultsNum, setAdults] = useState<number>(0);
+  const [childNum, setChild] = useState<number>(0);
 
   const handleBack = () => {
     if (step > -1) {
@@ -28,8 +28,8 @@ export default function SignUp() {
     <Auth>
       {step === -1 ? (
         <EmailPassword
-          initEmail={email}
-          initPassword={password}
+          initEmail={emailAddress}
+          initPassword={pw}
           onChange={(email, password) => {
             setEmail(email);
             setPassword(password);
@@ -48,8 +48,8 @@ export default function SignUp() {
           <div className="my-6">
             {step === 0 && (
               <Welcome
-                initAdulst={adults}
-                initChild={child}
+                initAdulst={adultsNum}
+                initChild={childNum}
                 onChange={(adults, child) => {
                   setAdults(adults);
                   setChild(child);

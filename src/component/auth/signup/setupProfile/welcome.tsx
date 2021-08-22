@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import AdultsSelector from "../../../setupProfile/adultsSelector";
-import ChildrenSelector from "../../../setupProfile/childrenSelector";
-import PinkButton from "../../../widgets/buttons/pinkButton";
-import CheckButton from "../../../widgets/inputs/checkButton";
-import Text1 from "../../../widgets/texts/text1";
-import Title2 from "../../../widgets/texts/title2";
+import React, { useState } from 'react';
+import AdultsSelector from '../../../setupProfile/adultsSelector';
+import ChildrenSelector from '../../../setupProfile/childrenSelector';
+import PinkButton from '../../../widgets/buttons/pinkButton';
+import CheckButton from '../../../widgets/inputs/checkButton';
+import Text1 from '../../../widgets/texts/text1';
+import Title2 from '../../../widgets/texts/title2';
 
 const Welcome: React.FC<{
   initAdulst: number;
@@ -30,7 +30,7 @@ const Welcome: React.FC<{
         <AdultsSelector
           maxValue={4}
           value={adults}
-          onChange={(value) => {
+          onChange={value => {
             setAdults(value);
           }}
         />
@@ -39,7 +39,7 @@ const Welcome: React.FC<{
         <ChildrenSelector
           maxValue={4}
           value={child}
-          onChange={(value) => {
+          onChange={value => {
             setChild(value);
           }}
         />
@@ -48,7 +48,7 @@ const Welcome: React.FC<{
         <CheckButton
           label="Pas d’enfant à la maison"
           checked={child === 0}
-          onChange={(checked) => {
+          onChange={checked => {
             console.log(checked);
             setChild(checked ? 0 : 1);
           }}

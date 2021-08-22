@@ -1,11 +1,8 @@
-import PlanMyMeals from "../../component/main/mesMenus/planMyMeals";
+import React from 'react';
+import PlanMyMeals from '../../component/main/mesMenus/planMyMeals';
 
 const MesMenus: React.FC = () => {
-  return (
-    <>
-      <PlanMyMeals />
-    </>
-  );
+  return <PlanMyMeals />;
 };
 
 export default MesMenus;

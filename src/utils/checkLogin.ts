@@ -1,5 +1,7 @@
-import { getToken } from "./auth";
+import { getToken } from './auth';
 
-export const checkLogin = (): boolean => {
+const checkLogin = (): boolean => {
   return !!getToken();
 };
+
+export default checkLogin;

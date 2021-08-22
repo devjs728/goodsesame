@@ -1,5 +1,4 @@
-import React from "react";
-import { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
 const DarkGrayButton: React.FC<{
   children: ReactNode | string;

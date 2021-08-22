@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { classNames } from "../../../utils";
+import React, { ReactNode } from 'react';
+import classNames from '../../../utils';
 
 const Text1: React.FC<{ children: ReactNode; className?: string }> = ({
   children,
@@ -8,8 +8,8 @@ const Text1: React.FC<{ children: ReactNode; className?: string }> = ({
   return (
     <p
       className={classNames(
-        "text-sm text-gray-1 font-medium not-italic",
-        className ? className : ""
+        'text-sm text-gray-1 font-medium not-italic',
+        className ?? '',
       )}
     >
       {children}

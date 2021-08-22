@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import propTypes from 'prop-types';
 
 export default function PasswordInput({
   label,
@@ -13,7 +14,12 @@ export default function PasswordInput({
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   error?: string;
 }) {
-  const [type, setType] = useState("password");
+  const [type, setType] = useState('password');
+
+  const handleClick = () => {
+    setType(type === 'password' ? 'text' : 'password');
+  };
+
   return (
     <div>
       {label && <p className="text-base text-gray-900 font-bold">{label}</p>}
@@ -28,13 +34,14 @@ export default function PasswordInput({
         />
         <div
           className="absolute right-3 cursor-pointer"
-          onClick={() => {
-            setType(type === "password" ? "text" : "password");
-          }}
+          role="button"
+          tabIndex={0}
+          onClick={() => handleClick()}
+          onKeyUp={() => handleClick()}
         >
           <img
             src={`./assets/image/eye_${
-              type === "password" ? "show" : "hide"
+              type === 'password' ? 'show' : 'hide'
             }.png`}
             alt="eye"
             className="w-5 "
@@ -45,3 +52,11 @@ export default function PasswordInput({
     </div>
   );
 }
+
+PasswordInput.defaultProps = {
+  label: '',
+  placeholder: '',
+  value: '',
+  error: '',
+  onChange: () => {},
+};

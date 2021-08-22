@@ -1,4 +1,4 @@
-export const SET_TOAST: string = "SET_TOAST";
+export const SET_TOAST = 'SET_TOAST';
 
 export enum ToastStatus {
   success,

@@ -1,12 +1,12 @@
-import React from "react";
-import { Switch } from "react-router-dom";
-import ConfirmEmail from "./page/confirmEmail";
-import SignIn from "./page/signIn";
-import SignUp from "./page/signUp";
-import ForgotPassword from "./page/forgotPassword";
-import { AuthRoute, PrivateRoute } from "./utils/privateRoute";
-import ChangePassword from "./page/changePassword";
-import Main from "./page/main";
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import ConfirmEmail from './page/confirmEmail';
+import SignIn from './page/signIn';
+import SignUp from './page/signUp';
+import ForgotPassword from './page/forgotPassword';
+import { AuthRoute, PrivateRoute } from './utils/privateRoute';
+import ChangePassword from './page/changePassword';
+import Main from './page/main';
 
 export default function Routes() {
   return (

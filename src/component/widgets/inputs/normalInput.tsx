@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import propTypes from 'prop-types';
 
 export default function NormalInput({
   label,
@@ -32,3 +33,11 @@ export default function NormalInput({
     </div>
   );
 }
+
+NormalInput.defaultProps = {
+  autoComplete: '',
+  placeholder: '',
+  value: '',
+  error: '',
+  onChange: () => {},
+};

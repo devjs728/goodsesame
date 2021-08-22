@@ -1,43 +1,43 @@
-import React, { useState } from "react";
-import Auth from "../component/auth";
-import SocialButtonGroup from "../component/auth/socialButtonGroup";
-import FormSeperator from "../component/auth/formSeperator";
-import NormalInput from "../component/widgets/inputs/normalInput";
-import PasswordInput from "../component/widgets/inputs/passwordInput";
-import CheckButton from "../component/widgets/inputs/checkButton";
-import PinkButton from "../component/widgets/buttons/pinkButton";
-import { signIn } from "../api/user";
-import { validateEmail } from "../utils/validate";
-import { useDispatch } from "react-redux";
-import { setToastify, ToastStatus } from "../store/main/action";
-import { Link, useHistory } from "react-router-dom";
-import { setToken } from "../utils/auth";
-import Title2 from "../component/widgets/texts/title2";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import Auth from '../component/auth';
+import SocialButtonGroup from '../component/auth/socialButtonGroup';
+import FormSeperator from '../component/auth/formSeperator';
+import NormalInput from '../component/widgets/inputs/normalInput';
+import PasswordInput from '../component/widgets/inputs/passwordInput';
+import CheckButton from '../component/widgets/inputs/checkButton';
+import PinkButton from '../component/widgets/buttons/pinkButton';
+import { signIn } from '../api/user';
+import { validateEmail } from '../utils/validate';
+import { setToastify, ToastStatus } from '../store/main/action';
+import { setToken } from '../utils/auth';
+import Title2 from '../component/widgets/texts/title2';
 
 const SignIn: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [email, setEmail] = useState<string>("");
-  const [emailError, setEmailError] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [passwordError, setPasswordError] = useState<string>("");
+  const [email, setEmail] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<string>('');
 
   const [isLoading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = () => {
-    setEmailError("");
-    setPasswordError("");
+    setEmailError('');
+    setPasswordError('');
     let validate = true;
     if (!email) {
       validate = false;
-      setEmailError("Veuillez insérer un e-mail!");
+      setEmailError('Veuillez insérer un e-mail!');
     } else if (!validateEmail(email)) {
       validate = false;
-      setEmailError("Veuillez insérer un e-mail de validation!");
+      setEmailError('Veuillez insérer un e-mail de validation!');
     }
     if (!password) {
       validate = false;
-      setPasswordError("Veuillez insérer un mot de passe !");
+      setPasswordError('Veuillez insérer un mot de passe !');
     }
 
     if (!validate) {
@@ -45,17 +45,17 @@ const SignIn: React.FC = () => {
     }
     setLoading(true);
     signIn(email, password)
-      .then((data) => {
+      .then(data => {
         setToken(data.access_token);
-        history.push("/");
+        history.push('/');
       })
-      .catch((err) => {
+      .catch(err => {
         console.error(err);
         dispatch(
           setToastify({
             status: ToastStatus.failed,
             message: "L'e-mail/le mot de passe est incorrect",
-          })
+          }),
         );
       })
       .finally(() => {
@@ -77,7 +77,7 @@ const SignIn: React.FC = () => {
             type="email"
             autoComplete="email"
             value={email}
-            onChange={(e) => {
+            onChange={e => {
               setEmail(e.target.value);
             }}
             error={emailError}
@@ -95,7 +95,7 @@ const SignIn: React.FC = () => {
           </div>
           <PasswordInput
             value={password}
-            onChange={(e) => {
+            onChange={e => {
               setPassword(e.target.value);
             }}
             error={passwordError}

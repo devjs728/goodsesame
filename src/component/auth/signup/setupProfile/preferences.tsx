@@ -1,10 +1,10 @@
-import { useState } from "react";
-import PreferencesSelector from "../../../setupProfile/preferencesSelector";
-import DarkGrayButton from "../../../widgets/buttons/darkGrayButton";
-import PinkButton from "../../../widgets/buttons/pinkButton";
-import SearchInput from "../../../widgets/inputs/searchInput";
-import Text1 from "../../../widgets/texts/text1";
-import Title2 from "../../../widgets/texts/title2";
+import React, { useState } from 'react';
+import PreferencesSelector from '../../../setupProfile/preferencesSelector';
+import DarkGrayButton from '../../../widgets/buttons/darkGrayButton';
+import PinkButton from '../../../widgets/buttons/pinkButton';
+import SearchInput from '../../../widgets/inputs/searchInput';
+import Text1 from '../../../widgets/texts/text1';
+import Title2 from '../../../widgets/texts/title2';
 
 const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
   const [isFirst, setFirst] = useState<boolean>(true);
@@ -35,28 +35,27 @@ const Preferences: React.FC<{ onChange: () => void }> = ({ onChange }) => {
         </div>
       </>
     );
-  } else {
-    return (
-      <>
-        <Title2>Préférences</Title2>
-        <div className="mt-2">
-          <Text1>Tu ne souhaites pas manger :</Text1>
-        </div>
-        <div className="mt-5">
-          <PreferencesSelector />
-        </div>
-        <p className="text-gray-800 font-bold text-lg mt-8">
-          Aliments particuliers
-        </p>
-        <div>
-          <SearchInput />
-        </div>
-        <div className="mt-7">
-          <PinkButton onClick={handleNext}>Continuer</PinkButton>
-        </div>
-      </>
-    );
   }
+  return (
+    <>
+      <Title2>Préférences</Title2>
+      <div className="mt-2">
+        <Text1>Tu ne souhaites pas manger :</Text1>
+      </div>
+      <div className="mt-5">
+        <PreferencesSelector />
+      </div>
+      <p className="text-gray-800 font-bold text-lg mt-8">
+        Aliments particuliers
+      </p>
+      <div>
+        <SearchInput />
+      </div>
+      <div className="mt-7">
+        <PinkButton onClick={handleNext}>Continuer</PinkButton>
+      </div>
+    </>
+  );
 };
 
 export default Preferences;

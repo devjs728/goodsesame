@@ -1,6 +1,6 @@
-import { authRequest } from "../utils/request";
+import { authRequest } from '../utils/request';
 
-const SUB_URL = "ingredient";
+const SUB_URL = 'ingredient';
 
 export interface Ingredient {
   id: number;
@@ -13,12 +13,12 @@ export const getIngredient = (name: string): Promise<Ingredient[]> => {
   return new Promise((resolve, reject) => {
     const params = { name };
 
-    authRequest({ url: `${SUB_URL}/search`, method: "get", params })
-      .then((res) => {
+    authRequest({ url: `${SUB_URL}/search`, method: 'get', params })
+      .then(res => {
         console.log(res);
         resolve(res.data);
       })
-      .catch((err) => {
+      .catch(err => {
         reject(err);
       });
   });

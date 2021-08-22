@@ -1,4 +1,4 @@
-import { SET_TOAST } from "./action";
+import { SET_TOAST } from './action';
 
 const INITIAL_STATE = {
   toastify: null,
@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 export default function main(
   state = INITIAL_STATE,
-  action: { [key: string]: any }
+  action: { [key: string]: any },
 ) {
   switch (action.type) {
     case SET_TOAST:

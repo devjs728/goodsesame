@@ -2,13 +2,13 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
   ExclamationIcon,
-} from "@heroicons/react/solid";
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import Routes from "./Routes";
-import { toast, ToastContainer } from "react-toastify";
-import { ToastInfo, ToastStatus } from "./store/main/action";
-import "react-toastify/dist/ReactToastify.css";
+} from '@heroicons/react/solid';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+import Routes from './Routes';
+import { ToastInfo, ToastStatus } from './store/main/action';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC<{ toastify: ToastInfo }> = ({ toastify }) => {
   useEffect(() => {
@@ -20,14 +20,14 @@ const App: React.FC<{ toastify: ToastInfo }> = ({ toastify }) => {
             {toastify.message}
           </div>,
           {
-            position: "top-right",
+            position: 'top-right',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-          }
+          },
         );
         break;
       case ToastStatus.warning:
@@ -37,32 +37,34 @@ const App: React.FC<{ toastify: ToastInfo }> = ({ toastify }) => {
             {toastify.message}
           </div>,
           {
-            position: "top-right",
+            position: 'top-right',
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-          }
+          },
         );
         break;
-      case ToastStatus.failed:
-        toast.error(
-          <div className="flex">
-            <ExclamationCircleIcon className="h-6 w-6 text-white mr-3" />
-            {toastify.message}
-          </div>,
-          {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          }
-        );
+      // case ToastStatus.failed:
+      //   toast.error(
+      //     <div className="flex">
+      //       <ExclamationCircleIcon className="h-6 w-6 text-white mr-3" />
+      //       {toastify.message}
+      //     </div>,
+      //     {
+      //       position: 'top-right',
+      //       autoClose: 5000,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: true,
+      //       draggable: true,
+      //       progress: undefined,
+      //     },
+      //   );
+      default:
+        break;
     }
   }, [toastify]);
 

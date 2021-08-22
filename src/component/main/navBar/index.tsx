@@ -1,11 +1,12 @@
-import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link, useLocation } from "react-router-dom";
-import { classNames } from "../../../utils";
-import navItems from "./navItems";
+import React from 'react';
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Link, useLocation } from 'react-router-dom';
+import classNames from '../../../utils';
+import navItems from './navItems';
 
 const NavBar: React.FC = () => {
-  let location = useLocation();
+  const location = useLocation();
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -39,9 +40,9 @@ const NavBar: React.FC = () => {
                       to={path}
                       className={classNames(
                         location?.pathname === path
-                          ? "text-pink-1"
-                          : "text-gray-1",
-                        "text-normal font-bold transition-color duration-200 flex justify-center items-center"
+                          ? 'text-pink-1'
+                          : 'text-gray-1',
+                        'text-normal font-bold transition-color duration-200 flex justify-center items-center',
                       )}
                     >
                       <NavImage active={location?.pathname === path} />
@@ -71,9 +72,9 @@ const NavBar: React.FC = () => {
                   to={path}
                   className={classNames(
                     location?.pathname === path
-                      ? "text-pink-1 bg-pink-50 border-pink-500"
-                      : "text-gray-1",
-                    "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                      ? 'text-pink-1 bg-pink-50 border-pink-500'
+                      : 'text-gray-1',
+                    'block pl-3 pr-4 py-2 border-l-4 text-base font-medium',
                   )}
                 >
                   {name}

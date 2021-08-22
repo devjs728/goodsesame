@@ -1,5 +1,5 @@
-import React from "react";
-import SocialButton from "./socialButton";
+import React from 'react';
+import SocialButton from './socialButton';
 
 export default function SocialButtonGroup() {
   return (

@@ -1,10 +1,11 @@
-import Auth from "../component/auth";
-import NormalInput from "../component/widgets/inputs/normalInput";
-import PinkButton from "../component/widgets/buttons/pinkButton";
-import GrayButton from "../component/widgets/buttons/grayButton";
-import { ChevronLeftIcon } from "@heroicons/react/solid";
-import Title2 from "../component/widgets/texts/title2";
-import Text1 from "../component/widgets/texts/text1";
+import React from 'react';
+import { ChevronLeftIcon } from '@heroicons/react/solid';
+import Auth from '../component/auth';
+import NormalInput from '../component/widgets/inputs/normalInput';
+import PinkButton from '../component/widgets/buttons/pinkButton';
+import GrayButton from '../component/widgets/buttons/grayButton';
+import Title2 from '../component/widgets/texts/title2';
+import Text1 from '../component/widgets/texts/text1';
 
 export default function ConfirmEmail() {
   return (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ChldrenSelector: React.FC<{
   maxValue: number;
   value: number;
@@ -15,18 +17,22 @@ const ChldrenSelector: React.FC<{
       <div className="flex flex-nowrap justify-between items-center mt-2">
         {Array.from(Array(maxValue + 1), (e, index) => {
           return (
-            <img
-              key={index}
-              src={`/assets/image/${
-                value > index ? "active" : "deactive"
-              }_children.png`}
-              alt="aldutes"
-              className="w-12 h-12 sm:w-16 sm:h-16 cursor-pointer select-none"
-              onClick={() => {
-                handleChange(index);
-              }}
+            <div
+              role="button"
+              tabIndex={index}
+              onClick={() => handleChange(index)}
+              onKeyUp={() => handleChange(index)}
               draggable="false"
-            />
+            >
+              <img
+                key={index}
+                src={`/assets/image/${
+                  value > index ? 'active' : 'deactive'
+                }_children.png`}
+                alt="aldutes"
+                className="w-12 h-12 sm:w-16 sm:h-16 cursor-pointer select-none"
+              />
+            </div>
           );
         })}
       </div>

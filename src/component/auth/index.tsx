@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react";
-import { classNames } from "../../utils";
-import styles from "./index.module.scss";
+import React, { ReactNode } from 'react';
+import classNames from '../../utils';
+import styles from './index.module.scss';
 
 export default function Auth({ children }: { children: ReactNode }) {
   return (
     <div
       className={classNames(
-        "block md:flex bg-yellow-1",
-        styles["auth-container"]
+        'block md:flex bg-yellow-1',
+        styles['auth-container'],
       )}
     >
       <div className="hidden md:flex flex-col w-96 lg:w-104 h-screen px-16 pt-16 pb-8">
@@ -30,7 +30,7 @@ export default function Auth({ children }: { children: ReactNode }) {
               className="w-80 mx-auto select-none"
               draggable="false"
             />
-            <p className={classNames(styles["copyright"])}>
+            <p className={classNames(styles.copyright)}>
               © Tous droits réservés
             </p>
           </div>
