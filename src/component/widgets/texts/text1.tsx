@@ -8,7 +8,7 @@ const Text1: React.FC<{ children: ReactNode; className?: string }> = ({
   return (
     <p
       className={classNames(
-        "text-sm text-gray-1 font-medium not-italic",
+        "text-xs text-gray-1 font-medium not-italic",
         className ? className : ""
       )}
     >

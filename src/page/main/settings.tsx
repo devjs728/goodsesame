@@ -9,7 +9,7 @@ const Settings: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="h-screen flex overflow-hidden">
+    <div className="h-full flex">
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -73,7 +73,7 @@ const Settings: React.FC = () => {
           <NavBar />
         </div>
       </div>
-      <div className="flex flex-col w-0 flex-1 px-6">
+      <div className="flex-1 px-6">
         <Switch>
           {navItems.map(({ path, component }) => (
             <Route key={path} exact path={path} component={component} />

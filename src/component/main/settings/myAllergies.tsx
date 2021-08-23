@@ -1,4 +1,3 @@
-import { XCircleIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import AllergiesSelector from "../../setupProfile/allergiesSelector";
 import PinkButton2 from "../../widgets/buttons/pinkButton2";

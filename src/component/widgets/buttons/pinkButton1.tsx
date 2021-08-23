@@ -12,8 +12,8 @@ const PinkButton1: React.FC<{
     <button
       type="button"
       className={classNames(
-        "w-full inline-flex justify-center items-center border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-4 hover:bg-opacity-20 bg-opacity-15 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-200",
-        className ?? "px-2.5 py-2.5"
+        "inline-flex justify-center items-center border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-pink-4 hover:bg-opacity-20 bg-opacity-15 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-200 px-2.5 py-2.5",
+        className ?? ""
       )}
       onClick={onClick}
       disabled={isLoading}

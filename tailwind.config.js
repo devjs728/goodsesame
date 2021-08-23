@@ -19,6 +19,10 @@ module.exports = {
         "orange-2": "#ed9648",
         "green-1": "#27AE60",
         "green-2": "#24a259",
+        "blue-1": "#4285F4",
+        "blue-2": "#1DA1F2",
+        "blue-3": "#157DC3",
+        "black-1": "#201E1A",
       }),
       spacing: {
         13: "3.438rem",
@@ -42,6 +46,10 @@ module.exports = {
         "orange-2": "#ed9648",
         "green-1": "#27AE60",
         "green-2": "#24a259",
+        "blue-1": "#4285F4",
+        "blue-2": "#1DA1F2",
+        "blue-3": "#157DC3",
+        "black-1": "#201E1A",
       },
       ringColor: {
         "pink-1": "#F34160",
@@ -55,6 +63,10 @@ module.exports = {
         "orange-2": "#ed9648",
         "green-1": "#27AE60",
         "green-2": "#24a259",
+        "blue-1": "#4285F4",
+        "blue-2": "#1DA1F2",
+        "blue-3": "#157DC3",
+        "black-1": "#201E1A",
       },
       maxWidth: {
         26: "26rem",
