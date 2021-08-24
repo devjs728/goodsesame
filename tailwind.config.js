@@ -77,6 +77,9 @@ module.exports = {
       backgroundOpacity: {
         15: "0.15",
       },
+      width: {
+        512: "32rem",
+      },
     },
   },
   variants: {

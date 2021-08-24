@@ -1,5 +1,7 @@
 import { ExclamationCircleIcon, PlusIcon } from "@heroicons/react/solid";
 import { ReactNode } from "react";
+import { useDispatch } from "react-redux";
+import { openChooseSocialModal } from "../../../store/modal/action";
 import { classNames } from "../../../utils";
 import PinkButton1 from "../../widgets/buttons/pinkButton1";
 import PinkButton2 from "../../widgets/buttons/pinkButton2";
@@ -14,6 +16,7 @@ import Title3 from "../../widgets/texts/title3";
 import ToggleSwitch from "../../widgets/toggleSwitch";
 
 const AccountSettings: React.FC = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <div>
@@ -56,7 +59,7 @@ const AccountSettings: React.FC = () => {
           </SocialNode>
         </div>
         <div className="mt-8">
-          <PinkButton2>
+          <PinkButton2 onClick={() => dispatch(openChooseSocialModal(true))}>
             <PlusIcon className="w-5 h-5" />
             <span className="ml-2">Ajouter un compte</span>
           </PinkButton2>

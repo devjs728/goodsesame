@@ -4,6 +4,7 @@ import { XIcon } from "@heroicons/react/outline";
 import NavBar from "../../component/main/settings/navBar";
 import navItems from "../../component/main/settings/navBar/navItems";
 import { Redirect, Route, Switch } from "react-router-dom";
+import ChooseSocialModal from "../../component/modals/chooseSocialModal";
 
 const Settings: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -81,6 +82,7 @@ const Settings: React.FC = () => {
           <Redirect from="/" to={navItems[0].path} />
         </Switch>
       </div>
+      <ChooseSocialModal />
     </div>
   );
 };

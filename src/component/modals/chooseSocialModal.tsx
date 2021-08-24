@@ -1,10 +1,21 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from "react";
+import React, { Fragment, ReactNode } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/outline";
+import { connect, useDispatch } from "react-redux";
+import { openChooseSocialModal } from "../../store/modal/action";
+import Title2 from "../widgets/texts/title2";
+import GoogleIcon from "../widgets/icons/googleIcon";
+import OpacityWhiteButton from "../widgets/buttons/opacityWhiteButton";
+import AppleIcon from "../widgets/icons/appleIcon";
+import TwitterIcon from "../widgets/icons/twitterIcon";
+import FaceBookIcon from "../widgets/icons/facebookIcon";
+import MonoPrixIcon from "../widgets/icons/monoprixIcon";
+import { CheckCircleIcon } from "@heroicons/react/solid";
 
-const ChooseSocialModal: React.FC = () => {
-  const [open, setOpen] = useState(true);
+const ChooseSocialModal: React.FC<{ open: boolean }> = ({ open }) => {
+  const dispatch = useDispatch();
+  const setOpen = (open: boolean) => {
+    dispatch(openChooseSocialModal(open));
+  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -43,38 +54,51 @@ const ChooseSocialModal: React.FC = () => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-              <div>
-                <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                  <CheckIcon
-                    className="h-6 w-6 text-green-600"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="mt-3 text-center sm:mt-5">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg leading-6 font-medium text-gray-900"
-                  >
-                    Payment successful
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consequatur amet labore.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-5 sm:mt-6">
-                <button
-                  type="button"
-                  className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                  onClick={() => setOpen(false)}
+            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left shadow-xl transform transition-all sm:my-8 sm:align-middle sm:p-6 max-w-min">
+              <Title2>Choisissez un réseau social</Title2>
+              <div className="mt-8">
+                <SocialNode
+                  icon={<GoogleIcon />}
+                  name="Google"
+                  background="blue-1"
                 >
-                  Go back to dashboard
-                </button>
+                  <OpacityWhiteButton>Attacher</OpacityWhiteButton>
+                </SocialNode>
+                <SocialNode
+                  icon={<AppleIcon fillColor="#201E1A" />}
+                  name="Apple"
+                  background="black-1"
+                >
+                  <OpacityWhiteButton>Attacher</OpacityWhiteButton>
+                </SocialNode>
+                <SocialNode
+                  icon={<TwitterIcon fillColor="#1DA1F2" />}
+                  name="Twitter"
+                  background="blue-2"
+                >
+                  <OpacityWhiteButton>Attacher</OpacityWhiteButton>
+                </SocialNode>
               </div>
+              <div className="mt-12">
+                <SocialNode
+                  icon={<FaceBookIcon fillColor="#157DC3" />}
+                  name="Facebook"
+                  background="blue-3"
+                >
+                  <CheckCircleIcon className="text-white w-7 h-7 mr-2" />
+                </SocialNode>
+                <SocialNode
+                  icon={<MonoPrixIcon fillColor="#EB5757" />}
+                  name="Monoprix"
+                  background="pink-4"
+                >
+                  <CheckCircleIcon className="text-white w-7 h-7 mr-2" />
+                </SocialNode>
+              </div>
+              <p className="text-gray-1 text-base font-medium break-words text-center">
+                Après avoir cliqué sur le bouton, vous serez redirigé vers la
+                page du réseau social.
+              </p>
             </div>
           </Transition.Child>
         </div>
@@ -83,4 +107,31 @@ const ChooseSocialModal: React.FC = () => {
   );
 };
 
-export default ChooseSocialModal;
+const SocialNode: React.FC<{
+  icon: ReactNode;
+  name: string;
+  background: string;
+  children: ReactNode;
+}> = ({ icon, name, background, children }) => {
+  return (
+    <div
+      className={`bg-${background} w-full sm:w-512 p-1.5 my-4 rounded-md flex justify-between items-center`}
+    >
+      <div className="flex items-center">
+        <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+          {icon}
+        </div>
+        <p className="text-white text-base font-medium not-italic ml-4">
+          {name}
+        </p>
+      </div>
+      {children}
+    </div>
+  );
+};
+
+const mapStateToProps = (state: any) => {
+  return { open: state.modal.openChooseSocial };
+};
+
+export default connect(mapStateToProps)(ChooseSocialModal);
