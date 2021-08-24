@@ -11,7 +11,7 @@ import Progress from "../component/setupProfile/progress";
 import GrayButton from "../component/widgets/buttons/grayButton";
 
 export default function SignUp() {
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(-1);
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
