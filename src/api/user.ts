@@ -1,3 +1,4 @@
+import { FamilyMembers } from "../interface/familyMembers";
 import { UserInfo } from "../interface/userInfo";
 import { authRequest, request } from "../utils/request";
 
@@ -24,7 +25,25 @@ export const getProfile = (): Promise<UserInfo> => {
   return new Promise((resolve, reject) => {
     authRequest({ url: `${SUB_URL}/profile`, method: "get" })
       .then((res) => {
-        console.log(res);
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+export const setFamilyMember = (
+  adult: number,
+  child: number
+): Promise<FamilyMembers> => {
+  const data = {
+    adult,
+    child,
+  };
+  return new Promise((resolve, reject) => {
+    authRequest({ url: `${SUB_URL}/familymemberset`, method: "post", data })
+      .then((res) => {
         resolve(res.data);
       })
       .catch((err) => {

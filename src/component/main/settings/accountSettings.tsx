@@ -104,7 +104,7 @@ const AccountSettings: React.FC = () => {
           <div className="flex flex-wrap">
             <ExclamationCircleIcon className="text-pink-4 w-3.5 h-3.5" />
             <span className="ml-1">
-              Après avoir supprimé votre compte, toutes vos données<br></br>{" "}
+              Après avoir supprimé votre compte, toutes vos données<br></br>
               seront perdues.
             </span>
           </div>

@@ -11,10 +11,10 @@ const Welcome: React.FC<{
   initChild: number;
   onChange: (adults: number, child: number) => void;
 }> = ({ initAdulst, initChild, onChange }) => {
-  const [adults, setAdults] = useState<number>(initAdulst);
+  const [adult, setAdult] = useState<number>(initAdulst);
   const [child, setChild] = useState<number>(initChild);
   const handleNext = () => {
-    onChange(adults, child);
+    onChange(adult, child);
   };
 
   return (
@@ -29,9 +29,9 @@ const Welcome: React.FC<{
       <div className="mt-6">
         <AdultsSelector
           maxValue={4}
-          value={adults}
+          value={adult}
           onChange={(value) => {
-            setAdults(value);
+            setAdult(value);
           }}
         />
       </div>

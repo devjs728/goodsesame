@@ -57,8 +57,6 @@ const SignIn: React.FC = () => {
             message: "L'e-mail/le mot de passe est incorrect",
           })
         );
-      })
-      .finally(() => {
         setLoading(false);
       });
   };

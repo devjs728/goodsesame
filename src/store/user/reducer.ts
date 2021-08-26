@@ -1,6 +1,6 @@
-import { SET_PROFILE } from "./action";
+import { SET_FAMILY_MEMBER, SET_PROFILE } from "./action";
 
-const INITIAL_STATE = { info: null };
+const INITIAL_STATE = {};
 
 export default function user(
   state = INITIAL_STATE,
@@ -8,7 +8,9 @@ export default function user(
 ) {
   switch (action.type) {
     case SET_PROFILE:
-      return { ...state, info: action.payload };
+      return action.payload;
+    case SET_FAMILY_MEMBER:
+      return { ...state, family_members: action.payload };
     default:
       return state;
   }

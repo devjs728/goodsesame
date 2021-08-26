@@ -14,8 +14,15 @@ const faqs = [
   {
     question:
       "Pourquoi avez-vous une recette aussi complexe, parce que vous pouvez beaucoup plus facile?",
-    answer:
-      "C'est pas vrai. Je ne cuisine pas de plats complexes, mais je suis catégoriquement contre la simplification de la recette au détriment du goût. Si cette approche ne vous plaît pas, j'ai une recette qui vous conviendra parfaitement, la voici.",
+    answer: (
+      <>
+        C'est pas vrai. Je ne cuisine pas de plats complexes, mais je suis
+        catégoriquement contre la simplification de la recette au détriment du
+        goût. Si cette approche ne vous plaît pas, j'ai une recette qui vous
+        conviendra parfaitement,{" "}
+        <span className="text-pink-4 ml-2">la voici.</span>
+      </>
+    ),
   },
   {
     question: "Que puis-je faire et que ne puis-je pas faire sur ce site?",
@@ -24,12 +31,22 @@ const faqs = [
   },
   {
     question: "Nous aimerions collaborer avec votre site.",
-    answer:
-      "Je serai heureux d'en discuter si vous m'envoyez des détails via le formulaire de contact dans la section sur l'auteur.",
+    answer: (
+      <>
+        Je serai heureux d'en discuter si vous m'envoyez des détails via le
+        formulaire de contact dans la section sur{" "}
+        <span className="text-pink-4 ml-2">l'auteur</span>.
+      </>
+    ),
   },
   {
     question: "Comment puis-je vous contacter?",
-    answer: "Vous pouvez nous écrire par mail contact@goodsesame.com",
+    answer: (
+      <>
+        Vous pouvez nous écrire par mail{" "}
+        <span className="text-pink-4 ml-2">contact@goodsesame.com</span>
+      </>
+    ),
   },
 ];
 

@@ -72,8 +72,8 @@ const TopInfo: React.FC<{ firstName: string; lastName: string }> = ({
 
 const mapStateToProps = (state: any) => {
   return {
-    firstName: state?.user?.info?.firstname ?? "",
-    lastName: state?.user?.info?.lastname ?? "",
+    firstName: state?.user?.firstname ?? "",
+    lastName: state?.user?.lastname ?? "",
   };
 };
 

@@ -1,3 +1,5 @@
+import { FamilyMembers } from "./familyMembers";
+
 export interface UserInfo {
   access_token: string;
   firstname: string;
@@ -30,7 +32,7 @@ export interface UserInfo {
   birthdate: any;
   kitchen_gear: any[];
   ingredients_disliked: any[];
-  family_members: any;
+  family_members: FamilyMembers;
   autologin_token: string;
   filters: any;
 }
