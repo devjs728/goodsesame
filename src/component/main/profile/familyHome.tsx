@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { setFamilyMember } from "../../../store/user/action";
+import { editProfile } from "../../../store/user/action";
 import AdultsSelector from "../../setupProfile/adultsSelector";
 import ChildrenSelector from "../../setupProfile/childrenSelector";
 import PinkButton2 from "../../widgets/buttons/pinkButton2";
 import CheckButton from "../../widgets/inputs/checkButton";
 import Title2 from "../../widgets/texts/title2";
 
-const FamilyFome: React.FC<{ initAdult: number; initChild: number }> = ({
+const FamilyHome: React.FC<{ initAdult: number; initChild: number }> = ({
   initAdult,
   initChild,
 }) => {
@@ -19,7 +19,7 @@ const FamilyFome: React.FC<{ initAdult: number; initChild: number }> = ({
   const onSubmit = async () => {
     try {
       setLoading(true);
-      await dispatch(setFamilyMember(adult, child));
+      await dispatch(editProfile({ adult, child }));
     } catch (err) {
       console.error(err);
     } finally {
@@ -74,4 +74,4 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-export default connect(mapStateToProps)(FamilyFome);
+export default connect(mapStateToProps)(FamilyHome);

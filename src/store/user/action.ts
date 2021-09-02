@@ -1,11 +1,13 @@
 import { Dispatch } from "react";
 import {
   getProfile as getProfileAxios,
-  setFamilyMember as setFamilyMemberAxios,
+  editProfile as editProfileAxios,
 } from "../../api/user";
+import { SetUerInfo } from "../../interface/userInfo";
+import { setToastify, ToastStatus } from "../main/action";
 
 export const SET_PROFILE: string = "SET_PROFILE";
-export const SET_FAMILY_MEMBER: string = "SET_FAMILY_MEMBER";
+export const EDIT_PROFILE: string = "EDIT_PROFILE";
 
 export const getUserProfile = () => async (dispatch: Dispatch<any>) => {
   try {
@@ -16,11 +18,17 @@ export const getUserProfile = () => async (dispatch: Dispatch<any>) => {
   }
 };
 
-export const setFamilyMember =
-  (adult: number, child: number) => async (dispatch: Dispatch<any>) => {
+export const editProfile =
+  (data: SetUerInfo | FormData) => async (dispatch: Dispatch<any>) => {
     try {
-      const family = await setFamilyMemberAxios(adult, child);
-      dispatch({ type: SET_FAMILY_MEMBER, payload: family });
+      const profile = await editProfileAxios(data);
+      dispatch({ type: EDIT_PROFILE, payload: profile });
+      dispatch(
+        setToastify({
+          status: ToastStatus.success,
+          message: "Profil modifié avec succès",
+        })
+      );
     } catch (err) {
       throw err;
     }

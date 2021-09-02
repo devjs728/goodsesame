@@ -1,13 +1,18 @@
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { calculatePrice, calculateScore } from "../../../utils";
 import GrayButton from "../../widgets/buttons/grayButton";
 import PinkButton1 from "../../widgets/buttons/pinkButton1";
 import Title2 from "../../widgets/texts/title2";
 
-const TopInfo: React.FC<{ firstName: string; lastName: string }> = ({
-  firstName,
-  lastName,
-}) => {
+const TopInfo: React.FC<{
+  firstName: string;
+  lastName: string;
+  adult: number;
+  child: number;
+  score: number;
+  price_tier: number;
+}> = ({ firstName, lastName, adult, child, score, price_tier }) => {
   const history = useHistory();
   return (
     <>
@@ -44,7 +49,7 @@ const TopInfo: React.FC<{ firstName: string; lastName: string }> = ({
             <p className="ml-3">Par Sésame</p>
           </div>
           <p className="bg-white bg-opacity-15 px-2.5 py-1 rounded-lg text-sm">
-            2
+            {adult + child}
           </p>
         </div>
         <div className="bg-orange-1 rounded-lg flex justify-between items-center px-3.5 py-2.5">
@@ -53,7 +58,7 @@ const TopInfo: React.FC<{ firstName: string; lastName: string }> = ({
             <p className="ml-3">Cuisson</p>
           </div>
           <p className="bg-white bg-opacity-15 px-2.5 py-1 rounded-lg text-sm">
-            ++
+            {calculateScore(score)}
           </p>
         </div>
         <div className="bg-pink-4 rounded-lg flex justify-between items-center px-3.5 py-2.5">
@@ -62,7 +67,7 @@ const TopInfo: React.FC<{ firstName: string; lastName: string }> = ({
             <p className="ml-3">Difficulté</p>
           </div>
           <p className="bg-white bg-opacity-15 px-2.5 py-1 rounded-lg text-sm">
-            €€€
+            {calculatePrice(price_tier)}
           </p>
         </div>
       </div>
@@ -74,6 +79,10 @@ const mapStateToProps = (state: any) => {
   return {
     firstName: state?.user?.firstname ?? "",
     lastName: state?.user?.lastname ?? "",
+    adult: state?.user?.family_members?.adult ?? 0,
+    child: state?.user?.family_members?.child ?? 0,
+    score: state?.user?.draft_plan?.analysis?.nutrition?.score ?? 0,
+    price_tier: state?.user?.draft_plan?.analysis?.price?.price_tire ?? 0,
   };
 };
 

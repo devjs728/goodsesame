@@ -1,5 +1,5 @@
 import { FamilyMembers } from "../interface/familyMembers";
-import { UserInfo } from "../interface/userInfo";
+import { SetUerInfo, UserInfo } from "../interface/userInfo";
 import { authRequest, request } from "../utils/request";
 
 const SUB_URL = "user";
@@ -23,7 +23,7 @@ export const signIn = (email: string, password: string): Promise<UserInfo> => {
 
 export const getProfile = (): Promise<UserInfo> => {
   return new Promise((resolve, reject) => {
-    authRequest({ url: `${SUB_URL}/profile`, method: "get" })
+    authRequest({ url: `${SUB_URL}/status`, method: "get" })
       .then((res) => {
         resolve(res.data);
       })
@@ -33,16 +33,11 @@ export const getProfile = (): Promise<UserInfo> => {
   });
 };
 
-export const setFamilyMember = (
-  adult: number,
-  child: number
+export const editProfile = (
+  data: SetUerInfo | FormData
 ): Promise<FamilyMembers> => {
-  const data = {
-    adult,
-    child,
-  };
   return new Promise((resolve, reject) => {
-    authRequest({ url: `${SUB_URL}/familymemberset`, method: "post", data })
+    authRequest({ url: `${SUB_URL}/profile`, method: "post", data })
       .then((res) => {
         resolve(res.data);
       })

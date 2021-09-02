@@ -50,8 +50,10 @@ const Slider: React.FC<{
   label?: string | ReactElement;
   imageName: string;
   levels: string[];
-}> = ({ label, imageName, levels }) => {
-  const [level, setLevel] = useState(0);
+  value?: number;
+  onChange?: (val: number) => void;
+}> = ({ label, imageName, levels, value, onChange }) => {
+  const [level, setLevel] = useState(value ?? 0);
 
   return (
     <div>
@@ -66,6 +68,9 @@ const Slider: React.FC<{
             name={name}
             onClick={() => {
               setLevel(index);
+              if (onChange) {
+                onChange(index);
+              }
             }}
           />
         ))}

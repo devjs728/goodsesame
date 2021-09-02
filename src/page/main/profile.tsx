@@ -1,5 +1,5 @@
 import TopInfo from "../../component/main/profile/topInfo";
-import FamilyFome from "../../component/main/profile/familyHome";
+import FamilyHome from "../../component/main/profile/familyHome";
 import KitchenMe from "../../component/main/profile/ktchenMe";
 import Budget from "../../component/main/profile/budget";
 
@@ -8,7 +8,7 @@ const Profile: React.FC = () => {
     <>
       <TopInfo />
       <div className="mt-10">
-        <FamilyFome />
+        <FamilyHome />
       </div>
       <div className="mt-10">
         <KitchenMe />

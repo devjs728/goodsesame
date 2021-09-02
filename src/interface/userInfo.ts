@@ -36,3 +36,11 @@ export interface UserInfo {
   autologin_token: string;
   filters: any;
 }
+
+export interface SetUerInfo {
+  adult?: number;
+  child?: number;
+  time_available?: number;
+  cooking_level?: number;
+  budget?: number;
+}
