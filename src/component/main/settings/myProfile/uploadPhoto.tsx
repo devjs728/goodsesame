@@ -4,15 +4,16 @@ import CropImageModal from "../../../modals/cropImageModal";
 import GrayButton from "../../../widgets/buttons/grayButton";
 import PinkButton2 from "../../../widgets/buttons/pinkButton2";
 
-const UploadPhoto: React.FC<{ firstName: string; lastName: string }> = ({
-  firstName,
-  lastName,
-}) => {
+const UploadPhoto: React.FC<{ banner: string }> = ({ banner }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex items-center">
       <img
-        src="/assets/image/default_avatar.png"
+        src={
+          banner
+            ? `${process.env.REACT_APP_BASE_URL}/${banner}`
+            : "/assets/image/default_avatar.png"
+        }
         alt="avatar"
         className="w-20 h-20 rounded-full"
       />
@@ -36,8 +37,7 @@ const UploadPhoto: React.FC<{ firstName: string; lastName: string }> = ({
 
 const mapStateToProps = (state: any) => {
   return {
-    firstName: state?.user?.firstname ?? "",
-    lastName: state?.user?.lastname ?? "",
+    banner: state?.user?.banner ?? "",
   };
 };
 

@@ -84,9 +84,7 @@ const EmailPassword: React.FC<{
           <PasswordInput
             label="Répétez le mot de passe"
             value={confirmPassword}
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
-            }}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             error={confirmPasswordError}
           />
         </div>

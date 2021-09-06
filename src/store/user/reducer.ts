@@ -1,4 +1,4 @@
-import { EDIT_PROFILE, SET_PROFILE } from "./action";
+import { EDIT_PROFILE, SET_PROFILE, UPDATE_BANNER } from "./action";
 
 const INITIAL_STATE = {};
 
@@ -11,6 +11,8 @@ export default function user(
       return action.payload;
     case EDIT_PROFILE:
       return { ...state, ...action.payload };
+    case UPDATE_BANNER:
+      return { ...state, banner: action.payload };
     default:
       return state;
   }

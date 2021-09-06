@@ -1,9 +1,10 @@
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import AllergiesSelector from "../../setupProfile/allergiesSelector";
 import PinkButton2 from "../../widgets/buttons/pinkButton2";
 import Title2 from "../../widgets/texts/title2";
 
-const MyAllergies: React.FC = () => {
+const MyAllergies: React.FC<{ allergies: [] }> = ({ allergies }) => {
   return (
     <>
       <Title2>Je ne peux pas manger...</Title2>
@@ -27,4 +28,10 @@ const MyAllergies: React.FC = () => {
   );
 };
 
-export default MyAllergies;
+const mapStateToProps = (state: any) => {
+  return {
+    allergies: state?.user?.filters ?? [],
+  };
+};
+
+export default connect(mapStateToProps)(MyAllergies);

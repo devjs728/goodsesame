@@ -8,8 +8,10 @@ import React, {
 import ReactCrop, { Crop } from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 import { useDispatch } from "react-redux";
-import { editProfile } from "../../../store/user/action";
+import { openCropImageModal } from "../../../store/modal/action";
+import { updateBanner } from "../../../store/user/action";
 import PinkButton2 from "../../widgets/buttons/pinkButton2";
+import Text1 from "../../widgets/texts/text1";
 
 export default function Content() {
   const dispatch = useDispatch();
@@ -18,8 +20,9 @@ export default function Content() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const previewCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const [currentFile, setFile] = useState<File | null>(null);
+  const [isLoading, setLoading] = useState<boolean>(false);
   const [crop, setCrop] = useState<Crop>({
-    unit: "%",
+    unit: "px",
     width: 20,
     height: 20,
     x: 0,
@@ -31,7 +34,18 @@ export default function Content() {
   const onSelectFile = async (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const reader = new FileReader();
-      reader.addEventListener("load", () => setUpImg(reader.result));
+      reader.addEventListener("load", () => {
+        setUpImg(reader.result);
+        var image = new Image();
+        image.onload = (e) => {
+          let minSize = Math.min(image.width, image.height);
+          minSize = minSize > 320 ? 120 : minSize;
+          setCrop({ ...crop, width: minSize, height: minSize });
+        };
+        if (typeof reader.result === "string") {
+          image.src = reader.result;
+        }
+      });
       reader.readAsDataURL(e.target.files[0]);
       setFile(e.target.files[0]);
     }
@@ -84,6 +98,8 @@ export default function Content() {
       return;
     }
 
+    setLoading(true);
+
     canvas.toBlob(
       async (blob) => {
         if (blob) {
@@ -104,7 +120,14 @@ export default function Content() {
           );
           const formData: FormData = new FormData();
           formData.append("banner", file);
-          await dispatch(editProfile(formData));
+          try {
+            await dispatch(updateBanner(formData));
+            setLoading(false);
+            dispatch(openCropImageModal(false));
+          } catch (err) {
+            console.error(err);
+            setLoading(false);
+          }
         }
       },
       "image/png",
@@ -130,7 +153,13 @@ export default function Content() {
           onChange={(c) => setCrop(c)}
           onComplete={(c) => setCompletedCrop(c)}
           circularCrop={true}
+          className="w-72 sm:w-96"
         />
+      )}
+      {!upImg && (
+        <Text1 className="whitespace-nowrap">
+          Veuillez sélectionner une image
+        </Text1>
       )}
       <div className="hidden">
         <canvas
@@ -142,13 +171,14 @@ export default function Content() {
           }}
         />
       </div>
-      <div className="w-full text-center">
+      <div className="w-full text-center mt-4">
         {upImg ? (
           <PinkButton2
             onClick={() =>
               handleUpload(previewCanvasRef.current, completedCrop)
             }
             className="whitespace-nowrap"
+            isLoading={isLoading}
           >
             Upload Image
           </PinkButton2>

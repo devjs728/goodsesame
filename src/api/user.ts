@@ -1,4 +1,3 @@
-import { FamilyMembers } from "../interface/familyMembers";
 import { SetUerInfo, UserInfo } from "../interface/userInfo";
 import { authRequest, request } from "../utils/request";
 
@@ -33,9 +32,7 @@ export const getProfile = (): Promise<UserInfo> => {
   });
 };
 
-export const editProfile = (
-  data: SetUerInfo | FormData
-): Promise<FamilyMembers> => {
+export const editProfile = (data: SetUerInfo | FormData): Promise<UserInfo> => {
   return new Promise((resolve, reject) => {
     authRequest({ url: `${SUB_URL}/profile`, method: "post", data })
       .then((res) => {
